@@ -61,7 +61,7 @@ export default function Header() {
             <FaMoon />
           </Button>
           <Link to="/sign-in">
-            <Button color="gray" className='w-20 ml-5'>Sign In</Button>
+            <Button   className='w-20 ml-5 dark:text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500' >Sign In</Button>
           </Link>
         </div>
     </Navbar>
