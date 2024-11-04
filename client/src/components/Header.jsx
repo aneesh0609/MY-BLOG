@@ -4,12 +4,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
+import {toggleTheme} from '../redux/theme/themeSlice';
 import { useEffect, useState } from 'react';
 
 export default function Header() {
   const path = useLocation().pathname;
+  const dispatch = useDispatch();
   const location = useLocation();
   const { currentUser } = useSelector((state) => state.user);
+  const {theme} = useSelector((state) => state.theme);
 
   return (
    
@@ -38,11 +41,14 @@ export default function Header() {
       </Button>
       <div className='flex items-stretch '>
         <Button
-          className='w-12 h-10 mt-2 hidden sm:inline'
+          className='w-12 h-10 mt-2 hidden sm:inline rounded-full'
           color='gray'
           pill
+          onClick={()=>dispatch
+            (toggleTheme())
+          }
         >
-         <FaMoon />
+          {theme === 'light' ? <FaMoon className='ml-4' /> : <FaSun className='ml-4' />}
         </Button>
         {currentUser ? (
           <Dropdown
@@ -58,7 +64,7 @@ export default function Header() {
                 {currentUser.email}
               </span>
             </Dropdown.Header>
-            <Link to={'/dashboard?tab=profile'}>
+            <Link to={'/dashboard?tab=profile'}> 
               <Dropdown.Item >Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
