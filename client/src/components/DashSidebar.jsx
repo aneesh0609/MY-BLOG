@@ -20,7 +20,9 @@ export default function DashSidebar() {
     <Sidebar.Items>
       <Sidebar.ItemGroup className='bg-gray-100 rounded-md  dark:text-white dark:bg-black'>
         <Link to='/dashboard?tab=profile'>
-        <Sidebar.Item active={tab === 'profile'} icon={HiUser} label={'User'} labelColor ='dark' className='border-2  dark:text-white dark:bg-black' >
+        <Sidebar.Item active={tab === 'profile'} icon={HiUser} label={'User'} labelColor ='dark' className='border-2  dark:text-white dark:bg-black'
+        as='div'
+        >
           Profile
         </Sidebar.Item>
         </Link>
