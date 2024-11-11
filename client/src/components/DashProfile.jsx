@@ -6,8 +6,13 @@ import {
   updateStart,
   updateSuccess,
   updateFailure,
+  deleteUserStart,
+  deleteUserSuccess,
+  deleteUserFailure,
+  signoutSuccess,
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
+import { HiOutlineExclamationCircle } from 'react-icons/hi';
 
 export default function DashProfile() {
   const { currentUser, error, loading } = useSelector((state) => state.user);
@@ -18,6 +23,7 @@ export default function DashProfile() {
   const dispatch = useDispatch();
   const [updateUserSuccess, setUpdateUserSuccess] = useState(null);
   const [updateUserError, setUpdateUserError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -61,6 +67,24 @@ const handleChange = (e) => {
       setUpdateUserError(error.message);
     }
   };
+
+  const handleDeleteUser = async () => {
+    setShowModal(false);
+    try {
+      dispatch(deleteUserStart());
+      const res = await fetch(`/api/user/delete/${currentUser._id}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        dispatch(deleteUserFailure(data.message));
+      } else {
+        dispatch(deleteUserSuccess(data));
+      }
+    } catch (error) {
+      dispatch(deleteUserFailure(error.message));
+    }
+  };
  
   return (
     <div className='max-w-lg mx-auto p-3 w-full'>
@@ -82,7 +106,7 @@ const handleChange = (e) => {
       </form>
 
       <div className='text-red-500 flex justify-between mt-5'>
-         <span className='cursor-pointer'>Delete Account</span>
+         <span onClick={()=>setShowModal(true)} className='cursor-pointer'>Delete Account</span>
          <span className='cursor-pointer'>Sign Out</span>
       </div>
       {updateUserSuccess && (
@@ -95,6 +119,35 @@ const handleChange = (e) => {
           {updateUserError}
         </Alert>
       )}
+      {error && (
+        <Alert  className='mt-5 bg-red-400'>
+          {error}
+        </Alert>
+      )}
+       <Modal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        popup
+        size='md'
+      >
+        <Modal.Header />
+        <Modal.Body>
+          <div className='text-center'>
+            <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
+            <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
+              Are you sure you want to delete your account?
+            </h3>
+            <div className='flex justify-center gap-4'>
+              <Button className='bg-red-600 px-1 py-1 my-2' onClick={handleDeleteUser}>
+                Yes, I'm sure
+              </Button>
+              <Button color='gray' className=' px-1 py-1 my-2' onClick={() => setShowModal(false)}>
+                No, cancel
+              </Button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   )
 }
