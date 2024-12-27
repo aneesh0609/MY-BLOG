@@ -1,8 +1,15 @@
 import {  Button, FileInput, Select, TextInput } from 'flowbite-react';
+import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 export default function CreatePost() {
+  const [file, setFile] = useState(null);
+  const handleUpdloadImage = async () => {
+  }
+
+
+
   return (
     <div className='p-3 max-w-3xl mx-auto min-h-screen'>
       <h1 className='text-center text-3xl my-7 font-semibold'>Create a post</h1>
@@ -26,6 +33,9 @@ export default function CreatePost() {
           <FileInput
             type='file'
             accept='image/*'
+            onChange={(e) => setFile(e.target.files[0])}
+            onClick={handleUpdloadImage}
+            //disabled={imageUploadProgress}
           />
           <Button
             type='button'
