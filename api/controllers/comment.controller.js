@@ -84,7 +84,7 @@ export const editComment = async (req, res, next) => {
     next(error);
   }
 };
-/*
+
 export const deleteComment = async (req, res, next) => {
   try {
     const comment = await Comment.findById(req.params.commentId);
@@ -102,6 +102,8 @@ export const deleteComment = async (req, res, next) => {
     next(error);
   }
 };
+
+/*
 
 export const getcomments = async (req, res, next) => {
   if (!req.user.isAdmin)
