@@ -36,7 +36,7 @@ export const getPostComments = async (req, res, next) => {
 };
 
 
-/*
+
 
 export const likeComment = async (req, res, next) => {
   try {
@@ -59,6 +59,7 @@ export const likeComment = async (req, res, next) => {
   }
 };
 
+/*
 export const editComment = async (req, res, next) => {
   try {
     const comment = await Comment.findById(req.params.commentId);
