@@ -84,7 +84,13 @@ import Comment from './Comment';
     }
   };
 
-
+  const handleEdit = async (comment, editedContent) => {
+    setComments(
+      comments.map((c) =>
+        c._id === comment._id ? { ...c, content: editedContent } : c
+      )
+    );
+  };
 
 
 
@@ -155,6 +161,7 @@ import Comment from './Comment';
               key={comment._id}
               comment={comment}
               onLike={handleLike}
+              onEdit={handleEdit}
             />
           ))}
         </>

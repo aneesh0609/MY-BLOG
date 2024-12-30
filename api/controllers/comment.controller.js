@@ -59,7 +59,7 @@ export const likeComment = async (req, res, next) => {
   }
 };
 
-/*
+
 export const editComment = async (req, res, next) => {
   try {
     const comment = await Comment.findById(req.params.commentId);
@@ -84,7 +84,7 @@ export const editComment = async (req, res, next) => {
     next(error);
   }
 };
-
+/*
 export const deleteComment = async (req, res, next) => {
   try {
     const comment = await Comment.findById(req.params.commentId);
