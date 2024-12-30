@@ -23,7 +23,7 @@ export const createComment = async (req, res, next) => {
   }
 };
 
-/*
+
 export const getPostComments = async (req, res, next) => {
   try {
     const comments = await Comment.find({ postId: req.params.postId }).sort({
@@ -34,6 +34,9 @@ export const getPostComments = async (req, res, next) => {
     next(error);
   }
 };
+
+
+/*
 
 export const likeComment = async (req, res, next) => {
   try {
