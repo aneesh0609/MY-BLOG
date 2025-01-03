@@ -12,9 +12,21 @@ import { signoutSuccess } from '../redux/user/userSlice';
 export default function Header() {
   const path = useLocation().pathname;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const location = useLocation();
   const { currentUser } = useSelector((state) => state.user);
   const {theme} = useSelector((state) => state.theme);
+  const [searchTerm, setSearchTerm] = useState('');
+
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get('searchTerm');
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, [location.search]);
+
 
   const handleSignout = async () => {
     try {
@@ -32,6 +44,15 @@ export default function Header() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(location.search);
+    urlParams.set('searchTerm', searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/search?${searchQuery}`);
+  };
+
+
   return (
    
     <Navbar className= 'border-b-2 md:inline-block w-full'>
@@ -45,11 +66,14 @@ export default function Header() {
         </span>
         Blog
       </Link>
-      <form className='w-96 mt-2'>
+      <form className='w-96 mt-2'
+      onSubmit={handleSubmit} >
         <TextInput
           type='text'
           placeholder='Search...'
           className='hidden lg:inline'
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
    
