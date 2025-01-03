@@ -59,62 +59,66 @@ export default function Header() {
        <div className=' mx-auto flex  items-center flex-wrap justify-between container '>
       <Link
         to='/'
-        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
+        className='self-center whitespace-nowrap  sm:text-xl font-semibold dark:text-white mt-4 text-xl'
       >
-        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
+        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white font-bold text-2xl'>
           Moltres's
         </span>
         Blog
       </Link>
-      <form className='w-96 mt-2'
+
+      <form className='w-96 mt-3 '
       onSubmit={handleSubmit} >
-        <TextInput
+  <TextInput
           type='text'
+          color='gray'
           placeholder='Search...'
-          className='hidden lg:inline'
+          className='hidden lg:inline mt-4 '
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
    
      
-      <Button className='w-12 h-10 lg:hidden' color='gray' pill>
+      <Button className='w-12 h-11 lg:hidden pt-1 hover:bg-blue-200 ' color='gray' pill
+      onClick={() => navigate('/search')} >
         <AiOutlineSearch />
       </Button>
-      <div className='flex items-stretch '>
+      <div className='flex items-stretch mb-3'>
         <Button
-          className='w-12 h-10 mt-2 hidden sm:inline rounded-full'
+          className='w-12 h-10 mt-4  rounded-full  hover:bg-gray-300 dark:hover:bg-yellow-100 '
           color='gray'
           pill
           onClick={()=>dispatch
             (toggleTheme())
           }
         >
-          {theme === 'light' ? <FaMoon className='ml-4' /> : <FaSun className='ml-4' />}
+          {theme === 'light' ? <FaMoon className='mt-1 ' /> : <FaSun className='mt-1' />}
         </Button>
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
             inline
             label={
-              <Avatar alt='user' img={currentUser.profilePicture} rounded className='ml-8 mr-4' />
+              <Avatar alt='user' img={currentUser.profilePicture} rounded className='ml-8 mr-4 mt-4' />
             }
           >
-            <Dropdown.Header>
-              <span className='block text-sm'>@{currentUser.username}</span>
-              <span className='block text-sm font-medium truncate'>
+            <Dropdown.Header >
+              <span className='block text-sm dark:text-gray-500 hover:dark:text-gray-800 font-semibold'>@{currentUser.username}</span>
+              <span className='block text-sm truncate  dark:text-gray-500 hover:dark:text-gray-800 font-semibold'>
                 {currentUser.email}
               </span>
             </Dropdown.Header>
             <Link to={'/dashboard?tab=profile'}> 
-              <Dropdown.Item >Profile</Dropdown.Item>
+              <Dropdown.Item className=' hover:bg-gray-200 dark:text-gray-500 hover:dark:text-gray-800 font-semibold' >Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+            <Dropdown.Item onClick={handleSignout} className=' hover:bg-gray-200 dark:text-gray-500 hover:dark:text-gray-800 font-semibold'>Sign out</Dropdown.Item>
           </Dropdown>
         ) : (
           <Link to='/sign-in'>
-            <Button gradientDuoTone='purpleToBlue' outline>
+            <Button className='bg-black text-white  hover:bg-red-400  dark:bg-white
+          dark:text-gray-800   dark:hover:bg-yellow-100  ml-5 mr-4 mt-4' >
               Sign In
             </Button>
           </Link>
@@ -122,14 +126,14 @@ export default function Header() {
         <Navbar.Toggle />
       </div>
     
-      <Navbar.Collapse className='lg:inline sm:flex-wrap lg:ml-96 lg:text-lg lg:text-bold'>
-        <Navbar.Link active={path === '/'} as={'div'} className='lg:mr-24'>
+      <Navbar.Collapse className='lg:inline sm:flex-wrap lg:ml-96 lg:text-lg lg:text-bold mt-2'>
+        <Navbar.Link active={path === '/'} as={'div'} className='lg:mr-24 text-gray-500 font-semibold'>
           <Link to='/'>Home</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/about'} as={'div'} className='lg:mr-24'>
+        <Navbar.Link active={path === '/about'} as={'div'} className='lg:mr-24  text-gray-500 font-semibold'>
           <Link to='/about'>About</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/projects'} as={'div'}>
+        <Navbar.Link active={path === '/projects'} as={'div'} className='lg:mr-24  text-gray-500 font-semibold'>
           <Link to='/projects'>Projects</Link>
         </Navbar.Link>
       </Navbar.Collapse>

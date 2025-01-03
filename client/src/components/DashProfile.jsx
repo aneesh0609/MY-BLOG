@@ -212,7 +212,7 @@ export default function DashProfile() {
           />
         </div>
         {imageFileUploadError && (
-          <Alert color='failure'>{imageFileUploadError}</Alert>
+          <Alert className='bg-red-300'>{imageFileUploadError}</Alert>
         )}
         <TextInput
           type='text'
@@ -247,7 +247,7 @@ export default function DashProfile() {
             <Button
               type='button'
               gradientDuoTone='purpleToPink'
-              className='w-full'
+              className='w-full bg-red-400 hover:bg-red-500'
             >
               Create a post
             </Button>
@@ -255,25 +255,25 @@ export default function DashProfile() {
         )}
       </form>
       <div className='text-red-500 flex justify-between mt-5'>
-        <span onClick={() => setShowModal(true)} className='cursor-pointer'>
+        <span onClick={() => setShowModal(true)} className='cursor-pointer hover:text-blue-300'>
           Delete Account
         </span>
-        <span onClick={handleSignout} className='cursor-pointer'>
+        <span onClick={handleSignout} className='cursor-pointer hover:text-blue-300'>
           Sign Out
         </span>
       </div>
       {updateUserSuccess && (
-        <Alert color='success' className='mt-5'>
+        <Alert  className='mt-5 bg-green-200 dark:text-gray-800'>
           {updateUserSuccess}
         </Alert>
       )}
       {updateUserError && (
-        <Alert color='failure' className='mt-5'>
+        <Alert  className='mt-5  bg-red-200 dark:text-gray-800'>
           {updateUserError}
         </Alert>
       )}
       {error && (
-        <Alert color='failure' className='mt-5'>
+        <Alert color='failure' className='mt-5  bg-red-200 dark:text-gray-800'>
           {error}
         </Alert>
       )}
@@ -291,10 +291,10 @@ export default function DashProfile() {
               Are you sure you want to delete your account?
             </h3>
             <div className='flex justify-center gap-4'>
-              <Button color='failure' onClick={handleDeleteUser}>
+              <Button className='bg-red-500' onClick={handleDeleteUser}>
                 Yes, I'm sure
               </Button>
-              <Button color='gray' onClick={() => setShowModal(false)}>
+              <Button className='bg-gray-600' onClick={() => setShowModal(false)}>
                 No, cancel
               </Button>
             </div>

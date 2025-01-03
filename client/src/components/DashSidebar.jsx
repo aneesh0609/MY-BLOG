@@ -37,9 +37,9 @@ export default function DashSidebar() {
     }
   };
   return (
-   <Sidebar className=' w-full md:w-56'>
+   <Sidebar className=' w-full md:w-56 bg-gray-100'>
     <Sidebar.Items>
-      <Sidebar.ItemGroup className='bg-gray-100 rounded-md  dark:text-white dark:bg-black flex flex-col'>
+      <Sidebar.ItemGroup className='bg-gray-200 rounded-md  dark:text-white dark:bg-gray-900 flex flex-col '>
       {currentUser && currentUser.isAdmin && (
             <Link to='/dashboard?tab=dash'>
               <Sidebar.Item
@@ -52,7 +52,7 @@ export default function DashSidebar() {
             </Link>
           )}
         <Link to='/dashboard?tab=profile'>
-        <Sidebar.Item active={tab === 'profile'} icon={HiUser} label={currentUser.isAdmin ? 'Admin' : 'User'} labelColor ='dark' className='border-2  dark:text-white dark:bg-black'
+        <Sidebar.Item active={tab === 'profile'} icon={HiUser} label={currentUser.isAdmin ? 'Admin' : 'User'} labelColor ='dark' className=' bg-gray-200 dark:text-white dark:bg-gray-900'
         as='div'
         >
           Profile
@@ -63,7 +63,7 @@ export default function DashSidebar() {
               <Sidebar.Item
                 active={tab === 'posts'}
                 icon={HiDocumentText}
-                className='border-2  dark:text-white dark:bg-black'
+                className=' bg-gray-200 dark:text-white dark:bg-gray-900'
                 as='div'
               >
                 Posts
@@ -96,7 +96,7 @@ export default function DashSidebar() {
 
               </>
           )}
-        <Sidebar.Item onClick={handleSignout} icon={HiArrowSmRight} className='cursor-pointer border-2' >
+        <Sidebar.Item onClick={handleSignout} icon={HiArrowSmRight} className='cursor-pointer ' >
           Sign Out
         </Sidebar.Item>
       </Sidebar.ItemGroup>

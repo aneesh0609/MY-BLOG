@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
       <form className='flex flex-col gap-4'
       onSubmit={handleSubmit}
       >
-        <div className='flex flex-col gap-4 sm:flex-row justify-between'>
+        <div className='flex flex-col gap-4 sm:flex-row justify-between '>
           <TextInput
             type='text'
             placeholder='Title'
@@ -102,6 +102,7 @@ const handleSubmit = async (e) => {
                 onChange={(e) =>
                   setFormData({ ...formData, category: e.target.value })
                 }
+               
           >
             <option value='uncategorized'>Select a category</option>
             <option value='javascript'>JavaScript</option>
@@ -119,7 +120,7 @@ const handleSubmit = async (e) => {
           />
           <Button
             type='button'
-             className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-1 rounded-lg text-gray-500'
+             className='bg-blue-300 p-2'
             size='sm'
             outline
             onClick={handleUpdloadImage}

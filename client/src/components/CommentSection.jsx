@@ -118,7 +118,7 @@ import { HiOutlineExclamationCircle } from 'react-icons/hi';
     <div className='max-w-2xl mx-auto w-full p-3'>
       {currentUser ? (
         <div className='flex items-center gap-1 my-5 text-gray-500 text-sm'>
-          <p>Signed in as:</p>
+          <p className='dark:text-white'>Signed in as:</p>
           <img
             className='h-5 w-5 object-cover rounded-full'
             src={currentUser.profilePicture}
@@ -148,15 +148,16 @@ import { HiOutlineExclamationCircle } from 'react-icons/hi';
             placeholder='Add a comment...'
             rows='3'
             maxLength='200'
+            className='dark:text-gray-800'
             onChange={(e) => setComment(e.target.value)}
             value={comment}
           />
           <div className='flex justify-between items-center mt-5'>
-            <p className='text-gray-500 text-xs'>
+            <p className='text-gray-500 text-xs dark:text-white'>
               {200 - comment.length} characters remaining
             </p>
-            <Button outline gradientDuoTone='purpleToBlue' type='submit'>
-              Submit
+            <Button outline  type='submit'>
+             <span className='text-gray-800 hover:text-red-500'>Submit</span> 
             </Button>
           </div>
           {commentError && (
