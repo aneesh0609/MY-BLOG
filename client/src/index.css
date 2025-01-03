@@ -14,9 +14,7 @@ body {
   font-size: 0;
 }
 
-[data-testid="table-element"] .absolute {
-  position: static; /* Removes the absolute positioning */
-}
+
 .post-content h1 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -41,4 +39,10 @@ body {
 
 .dark .post-content a {
   color: red;
+}
+[data-testid="table-element"] .absolute {
+  position: static; /* Removes the absolute positioning */
+}
+.relative .absolute {
+  display: none;
 }
