@@ -3,7 +3,7 @@ import CallToAction from '../components/CallToAction';
 import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
 import {  LampDemo, ThreeDCardDemo } from '../components/Lamp';
-
+import SplitText from "../components/Stack";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div>
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto '>
-        <h1 className='text-3xl font-bold lg:text-6xl'>Welcome to my Blog</h1>
+        <SplitText text="WELCOME TO MY BLOG" className="custom-class text-2xl font-bold lg:text-6xl" delay={50} />
         <p className='text-gray-500 text-xs sm:text-sm'>
           Here you'll find a variety of articles and tutorials on topics such as
           web development, software engineering, and programming languages.
