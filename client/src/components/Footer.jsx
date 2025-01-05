@@ -1,6 +1,7 @@
 import {Footer} from 'flowbite-react';
 import { Link } from 'react-router-dom';
-import {BsFacebook ,BsInstagram,BsX ,BsGithub,BsDribbble} from 'react-icons/bs';
+
+import { FloatingDockDemo } from './Lamp';
 export default function FooterCom() {
   return (
     <Footer container className='border border-t-8 border-teal-500 p-3'>
@@ -53,12 +54,7 @@ export default function FooterCom() {
         <div className="">
           <Footer.Copyright href='#' by="2024 Moltres Blog" className='mt-5 mb-2' />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
-            <Footer.Icon href='#' icon={BsFacebook} />
-            <Footer.Icon href='#' icon={BsInstagram} />
-            <Footer.Icon href='#' icon={BsX} />
-            <Footer.Icon href='#' icon={BsGithub} />
-            <Footer.Icon href='#' icon={BsDribbble} />
-          
+           <FloatingDockDemo />
           </div>
         </div>
       </div>
