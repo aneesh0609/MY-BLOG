@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
  * Desktop navbar is better positioned at the bottom
  * Mobile navbar is better positioned at bottom right.
  **/
-import { IconBrandGoogleFilled, IconBrandInstagramFilled, IconBrandXFilled, IconLayoutNavbarCollapse } from "@tabler/icons-react";
+import { IconBadge4k, IconBrandGoogleFilled, IconBrandInstagramFilled, IconBrandXFilled, IconLayoutNavbarCollapse, IconPawFilled } from "@tabler/icons-react";
 import { AnimatePresence,  useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
   IconBrandGithub,
@@ -23,6 +23,7 @@ import {
   IconHome,
 } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { Button } from "flowbite-react";
 
 
 export function FloatingDockDemo() {
@@ -50,6 +51,13 @@ export function FloatingDockDemo() {
         <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "https://github.com",
+    },
+    {
+      title: "GitHub",
+      icon: (
+        <IconPawFilled className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://paws-world-moltres.netlify.app",
     },
   ];
   return (
@@ -255,118 +263,129 @@ export function ThreeDCardDemo() {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
       {/* Card 1 */}
       <CardContainer className="inter-var">
-        <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[300] h-auto rounded-xl p-6 border">
-          <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
-            Make things float in air
-          </CardItem>
-          <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-            Hover over this card to unleash the power of CSS perspective
-          </CardItem>
-          <CardItem translateZ="100" className="w-full mt-4">
-            <img
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              height="1000"
-              width="1000"
-              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-              alt="thumbnail"
-            />
-          </CardItem>
-          <div className="flex justify-between items-center mt-20">
-            <CardItem
-              translateZ={20}
-              href="https://google.com"
-              target="__blank"
-              className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-            >
-              Try now →
-            </CardItem>
-            <CardItem
-              translateZ={20}
-              href="https://google.com"
-              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-            >
-              Sign up
-            </CardItem>
-          </div>
-        </CardBody>
-      </CardContainer>
+  <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[300] h-auto rounded-xl p-6 border">
+    <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
+    JavaScript Full Course
+    </CardItem>
+    <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
+    Learn the fundamentals and advanced concepts of JavaScript to build dynamic web applications.
+    </CardItem>
+    <CardItem translateZ="100" className="w-full mt-4">
+      <img
+        src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+        height="1000"
+        width="1000"
+        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+        alt="thumbnail"
+      />
+    </CardItem>
+    <div className="flex justify-between items-center mt-20">
+      <a
+        translateZ={20}
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+      >
+        Try now →
+      </a>
+      <a
+        translateZ={20}
+        href="https://youtu.be/lfmg-EJ8gm4?si=QpFv5qRsYt88Zr3O"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+      >
+        Visit
+      </a>
+    </div>
+  </CardBody>
+</CardContainer>
 
-      {/* Card 2 */}
+
       <CardContainer className="inter-var">
-        <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[300] h-auto rounded-xl p-6 border">
-          <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
-            Make things float in air
-          </CardItem>
-          <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-            Hover over this card to unleash the power of CSS perspective
-          </CardItem>
-          <CardItem translateZ="100" className="w-full mt-4">
-            <img
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              height="1000"
-              width="1000"
-              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-              alt="thumbnail"
-            />
-          </CardItem>
-          <div className="flex justify-between items-center mt-20">
-            <CardItem
-              translateZ={20}
-              href="https://google.com"
-              target="__blank"
-              className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-            >
-              Try now →
-            </CardItem>
-            <CardItem
-              translateZ={20}
-              href="https://google.com"
-              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-            >
-              Sign up
-            </CardItem>
-          </div>
-        </CardBody>
-      </CardContainer>
+  <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[300] h-auto rounded-xl p-6 border">
+    <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
+    React Full Course
+    </CardItem>
+    <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
+    Learn React fundamentals and advanced concepts to build interactive web applications.
+    </CardItem>
+    <CardItem translateZ="100" className="w-full mt-4">
+      <img
+        src="https://geeksui.codescandy.com/geeks/assets/images/course/course-react.jpg"
+        height="1000"
+        width="1000"
+        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+        alt="thumbnail"
+      />
+    </CardItem>
+    <div className="flex justify-between items-center mt-20">
+      <a
+        translateZ={20}
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+      >
+        Try now →
+      </a>
+      <a
+        translateZ={20}
+        href="https://youtu.be/CgkZ7MvWUAA?si=smT1A-kbNasEI8El"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+      >
+        Visit
+      </a>
+    </div>
+  </CardBody>
+</CardContainer>
+
+
 
       {/* Card 3 */}
       <CardContainer className="inter-var">
-        <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[300] h-auto rounded-xl p-6 border">
-          <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
-            Make things float in air
-          </CardItem>
-          <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-            Hover over this card to unleash the power of CSS perspective
-          </CardItem>
-          <CardItem translateZ="100" className="w-full mt-4">
-            <img
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              height="1000"
-              width="1000"
-              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-              alt="thumbnail"
-            />
-          </CardItem>
-          <div className="flex justify-between items-center mt-20">
-            <CardItem
-              translateZ={20}
-              href="https://google.com"
-              target="__blank"
-              className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-            >
-              Try now →
-            </CardItem>
-            <CardItem
-              translateZ={20}
-              href="https://google.com"
-              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-            >
-              Sign up
-            </CardItem>
-          </div>
-        </CardBody>
-      </CardContainer>
+  <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[300] h-auto rounded-xl p-6 border">
+    <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
+    Data Structures Full Course
+    </CardItem>
+    <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
+    Understand core data structures like arrays, linked lists, and trees.
+    </CardItem>
+    <CardItem translateZ="100" className="w-full mt-4">
+      <img
+        src="https://files.codingninjas.in/article_images/custom-upload-1728967721-947da464.webp"
+        height="1000"
+        width="1000"
+        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+        alt="thumbnail"
+      />
+    </CardItem>
+    <div className="flex justify-between items-center mt-20">
+      <a
+        translateZ={20}
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+      >
+        Try now →
+      </a>
+      <a
+        translateZ={20}
+        href="https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=XwLWvQuTggWXaESh"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+      >
+        Visit
+      </a>
     </div>
+  </CardBody>
+</CardContainer>
+</div>
   );
 }
 

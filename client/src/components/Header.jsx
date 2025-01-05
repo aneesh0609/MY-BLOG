@@ -104,16 +104,16 @@ export default function Header() {
             }
           >
             <Dropdown.Header >
-              <span className='block text-sm dark:text-gray-500 hover:dark:text-gray-800 font-semibold'>@{currentUser.username}</span>
-              <span className='block text-sm truncate  dark:text-gray-500 hover:dark:text-gray-800 font-semibold'>
+              <span className='block text-sm dark:text-gray-300 hover:dark:text-gray-800 font-semibold'>@{currentUser.username}</span>
+              <span className='block text-sm truncate  dark:text-gray-300 hover:dark:text-gray-800 font-semibold'>
                 {currentUser.email}
               </span>
             </Dropdown.Header>
             <Link to={'/dashboard?tab=profile'}> 
-              <Dropdown.Item className=' hover:bg-gray-200 dark:text-gray-500 hover:dark:text-gray-800 font-semibold' >Profile</Dropdown.Item>
+              <Dropdown.Item className=' hover:bg-gray-200 dark:text-gray-300 hover:dark:text-gray-800 font-semibold' >Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout} className=' hover:bg-gray-200 dark:text-gray-500 hover:dark:text-gray-800 font-semibold'>Sign out</Dropdown.Item>
+            <Dropdown.Item onClick={handleSignout} className=' hover:bg-gray-200 dark:text-gray-300 hover:dark:text-gray-800 font-semibold'>Sign out</Dropdown.Item>
           </Dropdown>
         ) : (
           <Link to='/sign-in'>
