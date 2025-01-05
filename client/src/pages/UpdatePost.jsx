@@ -136,6 +136,9 @@ const handleSubmit = async (e) => {
             <option value='javascript'>JavaScript</option>
             <option value='reactjs'>React.js</option>
             <option value='nextjs'>Next.js</option>
+            <option value='c++'>C++</option>
+            <option value='datastructure'>Data-Structure</option>
+            <option value='database'>Database</option>
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
