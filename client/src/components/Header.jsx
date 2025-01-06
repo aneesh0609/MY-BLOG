@@ -76,6 +76,7 @@ export default function Header() {
           className='hidden lg:inline mt-4 '
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          style={{ color: 'black' }}
         />
       </form>
    

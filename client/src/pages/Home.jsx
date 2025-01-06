@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
 import {  LampDemo, ThreeDCardDemo } from '../components/Lamp';
 import SplitText from "../components/Stack";
+import BarPoll from '../components/Barpoll';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -40,6 +41,10 @@ export default function Home() {
       <div className='p-3 bg-amber-100 dark:bg-slate-700'>
         <ThreeDCardDemo />
    
+      </div>
+
+      <div className='p-3 bg-amber-100 dark:bg-slate-700'>
+        <BarPoll/>
       </div>
 
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7'>

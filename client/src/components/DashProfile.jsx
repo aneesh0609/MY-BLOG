@@ -220,6 +220,7 @@ export default function DashProfile() {
           placeholder='username'
           defaultValue={currentUser.username}
           onChange={handleChange}
+          style={{ color: 'black' }}
         />
         <TextInput
           type='email'
@@ -227,12 +228,14 @@ export default function DashProfile() {
           placeholder='email'
           defaultValue={currentUser.email}
           onChange={handleChange}
+          style={{ color: 'black' }}
         />
         <TextInput
           type='password'
           id='password'
           placeholder='password'
           onChange={handleChange}
+          style={{ color: 'black' }}
         />
         <Button
           type='submit'

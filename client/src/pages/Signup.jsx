@@ -66,8 +66,10 @@ const handleSubmit = async (e) => {
               <TextInput
               type='text'
               placeholder='username'
-              id = 'username' onChange={handleChange} /
-              >
+              id = 'username' onChange={handleChange} 
+              style={{ color: 'black' }}
+              />
+              
             </div>
 
             <div>
@@ -75,8 +77,10 @@ const handleSubmit = async (e) => {
               <TextInput
               type='text'
               placeholder='email'
-              id = 'email' onChange={handleChange} /
-              >
+              id = 'email' onChange={handleChange} 
+              style={{ color: 'black' }}
+              />
+              
             </div>
 
             <div>
@@ -84,7 +88,8 @@ const handleSubmit = async (e) => {
               <TextInput
               type='text'
               placeholder='password'
-              id = 'password' onChange={handleChange} />
+              id = 'password' onChange={handleChange}
+              style={{ color: 'black' }} />
 
             </div>
 

@@ -96,13 +96,14 @@ const handleSubmit = async (e) => {
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
+            style={{ color: 'black' }}
           />
 
           <Select 
                 onChange={(e) =>
                   setFormData({ ...formData, category: e.target.value })
                 }
-               
+                style={{ color: 'black' }}  
           >
             <option value='uncategorized'>Select a category</option>
             <option value='javascript'>JavaScript</option>
@@ -120,6 +121,7 @@ const handleSubmit = async (e) => {
             onChange={(e) => setFile(e.target.files[0])}
             onClick={handleUpdloadImage}
             disabled={imageUploadProgress}
+            style={{ color: 'black' }}
           />
           <Button
             type='button'
