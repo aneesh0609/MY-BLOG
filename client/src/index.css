@@ -60,3 +60,10 @@ body {
   overflow: hidden;
 }
 
+[data-testid="carousel-item"] .absolute {
+  position: static;
+}
+/* Override the carousel div with data-testid="carousel" */
+[data-testid="carousel"] {
+  position: static !important; /* Remove the absolute positioning */
+}

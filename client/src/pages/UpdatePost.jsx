@@ -110,6 +110,7 @@ const handleSubmit = async (e) => {
   return (
     <div className='p-3 max-w-3xl mx-auto min-h-screen'>
       <h1 className='text-center text-3xl my-7 font-semibold'>Update post</h1>
+      
       <form className='flex flex-col gap-4'
       onSubmit={handleSubmit}
       >
@@ -122,8 +123,10 @@ const handleSubmit = async (e) => {
             className='flex-1'
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
+              
             }
             value={formData.title}
+            style={{ color: 'black' }}
           />
 
           <Select 
@@ -131,6 +134,7 @@ const handleSubmit = async (e) => {
                   setFormData({ ...formData, category: e.target.value })
                 }
                 value={formData.category}
+                style={{ color: 'black' }}
           >
             <option value='uncategorized'>Select a category</option>
             <option value='javascript'>JavaScript</option>
@@ -148,6 +152,7 @@ const handleSubmit = async (e) => {
             onChange={(e) => setFile(e.target.files[0])}
             onClick={handleUpdloadImage}
             disabled={imageUploadProgress}
+            style={{ color: 'black' }}
           />
           <Button
             type='button'
