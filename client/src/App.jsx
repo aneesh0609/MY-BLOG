@@ -4,7 +4,6 @@ import About from "./pages/About";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
-import Projects from "./pages/Content";
 import Header from "./components/Header";
 import FooterCom from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute";
@@ -16,6 +15,11 @@ import ScrollToTop from "./components/ScrollToTop";
 import Search from "./pages/Search";
 import Content from "./pages/Content";
 import JavascriptC from "./pages/JavascriptC";
+import ReactC from "./pages/ReactC";
+import MongoDb from "./pages/MongoDb";
+import Node from "./pages/Node";
+import Dsa from "./pages/Dsaa";
+import TaskFlow from "./pages/TaskFlow";
 
 export default function App() {
   return (
@@ -41,6 +45,11 @@ export default function App() {
        <Route path="/content" element={<Content />} />
        <Route path='/post/:postSlug' element={<PostPage />} />
        <Route path="/javascript" element={<JavascriptC />} />
+       <Route path="/react" element={<ReactC />} />
+       <Route path="/dsa" element={<Dsa />} />
+       <Route path="/mongodb" element={<MongoDb />} />
+       <Route path="/node" element={<Node />} />
+       <Route path="/taskflow" element={<TaskFlow />} />
 
        </Routes>
        <FooterCom />

@@ -72,7 +72,7 @@ export default function Header() {
   <TextInput
           type='text'
           color='gray'
-          placeholder='Search...'
+          placeholder='Search article...'
           className='hidden lg:inline mt-4 '
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -127,15 +127,18 @@ export default function Header() {
         <Navbar.Toggle />
       </div>
     
-      <Navbar.Collapse className='lg:inline sm:flex-wrap lg:ml-96 lg:text-lg lg:text-bold mt-2'>
-        <Navbar.Link active={path === '/'} as={'div'} className='lg:mr-24 text-gray-500 font-semibold'>
+      <Navbar.Collapse className='lg:inline sm:flex-wrap lg:ml-80 lg:text-lg lg:text-bold mt-2'>
+        <Navbar.Link active={path === '/'} as={'div'} className='lg:mr-24   hover:text-blue-400      dark:hover:text-red-300  text-gray-500 font-semibold'>
           <Link to='/'>Home</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/about'} as={'div'} className='lg:mr-24  text-gray-500 font-semibold'>
-          <Link to='/about'>About</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === '/projects'} as={'div'} className='lg:mr-24  text-gray-500 font-semibold'>
+        <Navbar.Link active={path === '/content'} as={'div'} className='lg:mr-24 hover:text-blue-400    dark:hover:text-red-300  text-gray-500    font-semibold'>
           <Link to='/content'>Content</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === '/taskflow'} as={'div'} className='lg:mr-24  hover:text-blue-400      dark:hover:text-red-300  text-gray-500 font-semibold'>
+          <Link to='/taskflow'>TaskFlow</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === '/about'} as={'div'} className='lg:mr-24    hover:text-blue-400     dark:hover:text-red-300  text-gray-500 font-semibold'>
+          <Link to='/about'>About</Link>
         </Navbar.Link>
       </Navbar.Collapse>
       </div>

@@ -1,278 +1,329 @@
-import { AnimatePresence, useAnimate, usePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import { FiClock, FiPlus, FiTrash2 } from "react-icons/fi";
+import React, { useState, useEffect } from "react";
+import { FiPlus, FiTrash } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { FaFire } from "react-icons/fa";
 
-export const VanishList = () => {
-  // Retrieve todos from localStorage, or initialize with default todos
-  const storedTodos = JSON.parse(localStorage.getItem("todos")) || [
-    {
-      id: 1,
-      text: "Take out trash",
-      checked: false,
-      time: "5 mins",
-    },
-    {
-      id: 2,
-      text: "Do laundry",
-      checked: false,
-      time: "10 mins",
-    },
-    {
-      id: 3,
-      text: "Have existential crisis",
-      checked: true,
-      time: "12 hrs",
-    },
-    {
-      id: 4,
-      text: "Get dog food",
-      checked: false,
-      time: "1 hrs",
-    },
-  ];
+export const CustomKanban = () => {
+  return (
+    <div className="h-screen w-full bg-neutral-900 text-neutral-50">
+      <Board />
+    </div>
+  );
+};
 
-  const [todos, setTodos] = useState(storedTodos);
+const Board = () => {
+  const [cards, setCards] = useState(DEFAULT_CARDS);
 
+  // Load cards from localStorage when the component mounts
   useEffect(() => {
-    // Save todos to localStorage whenever they are updated
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  const handleCheck = (id) => {
-    setTodos((pv) =>
-      pv.map((t) => (t.id === id ? { ...t, checked: !t.checked } : t))
-    );
-  };
-
-  const removeElement = (id) => {
-    setTodos((pv) => pv.filter((t) => t.id !== id));
-  };
-
-  return (
-    <section
-      className="min-h-screen bg-zinc-950 py-24"
-      style={{
-        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke-width='2' stroke='%2318181b'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
-      }}
-    >
-      <div className="mx-auto w-full max-w-xl px-4">
-        <Header />
-        <div className="w-full space-y-3 pb-16"> {/* Added padding to avoid overlap */}
-          <Todos
-            removeElement={removeElement}
-            todos={todos}
-            handleCheck={handleCheck}
-          />
-        </div>
-      </div>
-
-      {/* The sticky Add Todo button placed after the list */}
-      <div className="fixed bottom-6 left-1/2 w-full max-w-xl -translate-x-1/2">
-        <Form setTodos={setTodos} />
-      </div>
-    </section>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="mb-6">
-      <h1 className="text-xl font-medium text-white">Good morning! ☀️</h1>
-      <p className="text-zinc-400">Let's see what we've got to do today.</p>
-    </div>
-  );
-};
-
-const Form = ({ setTodos }) => {
-  const [visible, setVisible] = useState(false);
-
-  const [time, setTime] = useState(15);
-  const [text, setText] = useState("");
-  const [unit, setUnit] = useState("mins");
-
-  const handleSubmit = () => {
-    if (!text.length) {
-      return;
+    const storedCards = localStorage.getItem("kanbanCards");
+    if (storedCards) {
+      setCards(JSON.parse(storedCards));
     }
+  }, []);
 
-    setTodos((pv) => [
-      {
-        id: Math.random(),
-        text,
-        checked: false,
-        time: `${time} ${unit}`,
-      },
-      ...pv,
-    ]);
-
-    setTime(15);
-    setText("");
-    setUnit("mins");
-  };
-
-  return (
-    <div className="relative w-full max-w-xl px-4">
-      <AnimatePresence>
-        {visible && (
-          <motion.form
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 25 }}
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSubmit();
-            }}
-            className="mb-6 w-full rounded border border-zinc-700 bg-zinc-900 p-3"
-          >
-            <textarea
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              placeholder="What do you need to do?"
-              className="h-24 w-full resize-none rounded bg-zinc-900 p-3 text-sm text-zinc-50 placeholder-zinc-500 caret-zinc-50 focus:outline-0"
-            />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
-                <input
-                  type="number"
-                  className="w-24 rounded bg-zinc-700 px-1.5 py-1 text-sm text-zinc-50 focus:outline-0"
-                  value={time}
-                  onChange={(e) => setTime(parseInt(e.target.value))}
-                />
-                <button
-                  type="button"
-                  onClick={() => setUnit("mins")}
-                  className={`rounded px-1.5 py-1 text-xs ${unit === "mins" ? "bg-white text-zinc-950" : "bg-zinc-300/20 text-zinc-300 transition-colors hover:bg-zinc-600 hover:text-zinc-200"}`}
-                >
-                  mins
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setUnit("hrs")}
-                  className={`rounded px-1.5 py-1 text-xs ${unit === "hrs" ? "bg-white text-zinc-950" : "bg-zinc-300/20 text-zinc-300 transition-colors hover:bg-zinc-600 hover:text-zinc-200"}`}
-                >
-                  hrs
-                </button>
-              </div>
-              <button
-                type="submit"
-                className="rounded bg-indigo-600 px-1.5 py-1 text-xs text-indigo-50 transition-colors hover:bg-indigo-500"
-              >
-                Submit
-              </button>
-            </div>
-          </motion.form>
-        )}
-      </AnimatePresence>
-      {/* Sticky Add Todo Button */}
-      <button
-        onClick={() => setVisible((pv) => !pv)}
-        className="w-full rounded-full border border-zinc-700 bg-zinc-900 py-3 text-lg text-white transition-colors hover:bg-zinc-800 active:bg-zinc-900"
-      >
-        <FiPlus
-          className={`transition-transform ${visible ? "rotate-45" : "rotate-0"}`}
-        />
-      </button>
-    </div>
-  );
-};
-
-const Todos = ({ todos, handleCheck, removeElement }) => {
-  return (
-    <div className="w-full space-y-3 pb-16"> {/* Padding for spacing */}
-      <AnimatePresence>
-        {todos.map((t) => (
-          <Todo
-            handleCheck={handleCheck}
-            removeElement={removeElement}
-            id={t.id}
-            key={t.id}
-            checked={t.checked}
-            time={t.time}
-          >
-            {t.text}
-          </Todo>
-        ))}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-const Todo = ({ removeElement, handleCheck, id, children, checked, time }) => {
-  const [isPresent, safeToRemove] = usePresence();
-  const [scope, animate] = useAnimate();
-
+  // Save cards to localStorage whenever they are updated
   useEffect(() => {
-    if (!isPresent) {
-      const exitAnimation = async () => {
-        animate(
-          "p",
-          {
-            color: checked ? "#6ee7b7" : "#fca5a5",
-          },
-          {
-            ease: "easeIn",
-            duration: 0.125,
-          }
-        );
-        await animate(
-          scope.current,
-          {
-            scale: 1.025,
-          },
-          {
-            ease: "easeIn",
-            duration: 0.125,
-          }
-        );
-
-        await animate(
-          scope.current,
-          {
-            opacity: 0,
-            x: checked ? 24 : -24,
-          },
-          {
-            delay: 0.75,
-          }
-        );
-        safeToRemove();
-      };
-
-      exitAnimation();
-    }
-  }, [isPresent]);
+    localStorage.setItem("kanbanCards", JSON.stringify(cards));
+  }, [cards]);
 
   return (
-    <motion.div
-      ref={scope}
-      layout
-      className="relative flex w-full items-center gap-3 rounded border border-zinc-700 bg-zinc-900 p-3"
-    >
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={() => handleCheck(id)}
-        className="size-4 accent-indigo-400"
+    <div className="flex h-full w-full gap-3 overflow-x-auto p-4 sm:p-6 md:p-12 flex-wrap sm:flex-nowrap">
+      <Column
+        title="Backlog"
+        column="backlog"
+        headingColor="text-white"
+        cards={cards}
+        setCards={setCards}
       />
-
-      <p
-        className={`text-white transition-colors ${checked && "text-zinc-400"}`}
-      >
-        {children}
-      </p>
-      <div className="ml-auto flex gap-1.5">
-        <div className="flex items-center gap-1.5 whitespace-nowrap rounded bg-zinc-800 px-1.5 py-1 text-xs text-zinc-400">
-          <FiClock />
-          <span>{time}</span>
-        </div>
-        <button
-          onClick={() => removeElement(id)}
-          className="rounded bg-red-300/20 px-1.5 py-1 text-xs text-red-300 transition-colors hover:bg-red-600 hover:text-red-200"
-        >
-          <FiTrash2 />
-        </button>
-      </div>
-    </motion.div>
+      <Column
+        title="Todo"
+        column="todo"
+        headingColor="text-yellow-300"
+        cards={cards}
+        setCards={setCards}
+      />
+      <Column
+        title="In progress"
+        column="doing"
+        headingColor="text-blue-400"
+        cards={cards}
+        setCards={setCards}
+      />
+      <Column
+        title="Complete"
+        column="done"
+        headingColor="text-emerald-400"
+        cards={cards}
+        setCards={setCards}
+      />
+      <BurnBarrel setCards={setCards} />
+    </div>
   );
 };
+
+const Column = ({ title, headingColor, cards, column, setCards }) => {
+  const [active, setActive] = useState(false);
+
+  const handleDragStart = (e, card) => {
+    e.dataTransfer.setData("cardId", card.id);
+  };
+
+  const handleDragEnd = (e) => {
+    const cardId = e.dataTransfer.getData("cardId");
+
+    setActive(false);
+    clearHighlights();
+
+    const indicators = getIndicators();
+    const { element } = getNearestIndicator(e, indicators);
+
+    const before = element.dataset.before || "-1";
+
+    if (before !== cardId) {
+      let copy = [...cards];
+
+      let cardToTransfer = copy.find((c) => c.id === cardId);
+      if (!cardToTransfer) return;
+      cardToTransfer = { ...cardToTransfer, column };
+
+      copy = copy.filter((c) => c.id !== cardId);
+
+      const moveToBack = before === "-1";
+
+      if (moveToBack) {
+        copy.push(cardToTransfer);
+      } else {
+        const insertAtIndex = copy.findIndex((el) => el.id === before);
+        if (insertAtIndex === undefined) return;
+
+        copy.splice(insertAtIndex, 0, cardToTransfer);
+      }
+
+      setCards(copy);
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    highlightIndicator(e);
+
+    setActive(true);
+  };
+
+  const clearHighlights = (els) => {
+    const indicators = els || getIndicators();
+
+    indicators.forEach((i) => {
+      i.style.opacity = "0";
+    });
+  };
+
+  const highlightIndicator = (e) => {
+    const indicators = getIndicators();
+
+    clearHighlights(indicators);
+
+    const el = getNearestIndicator(e, indicators);
+
+    el.element.style.opacity = "1";
+  };
+
+  const getNearestIndicator = (e, indicators) => {
+    const DISTANCE_OFFSET = 50;
+
+    const el = indicators.reduce(
+      (closest, child) => {
+        const box = child.getBoundingClientRect();
+
+        const offset = e.clientY - (box.top + DISTANCE_OFFSET);
+
+        if (offset < 0 && offset > closest.offset) {
+          return { offset: offset, element: child };
+        } else {
+          return closest;
+        }
+      },
+      {
+        offset: Number.NEGATIVE_INFINITY,
+        element: indicators[indicators.length - 1],
+      }
+    );
+
+    return el;
+  };
+
+  const getIndicators = () => {
+    return Array.from(document.querySelectorAll(`[data-column="${column}"]`));
+  };
+
+  const handleDragLeave = () => {
+    clearHighlights();
+    setActive(false);
+  };
+
+  const filteredCards = cards.filter((c) => c.column === column);
+
+  return (
+    <div className="w-full sm:w-56 md:w-72 lg:w-96 mb-6 sm:mb-0">
+      <div className="mb-3 flex items-center justify-between">
+        <h3 className={`font-medium ${headingColor} text-sm sm:text-base md:text-lg`}>
+          {title}
+        </h3>
+        <span className="rounded text-sm text-neutral-400">
+          {filteredCards.length}
+        </span>
+      </div>
+      <div
+        onDrop={handleDragEnd}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        className={`h-full w-full transition-colors ${
+          active ? "bg-neutral-800/50" : "bg-neutral-800/0"
+        }`}
+      >
+        {filteredCards.map((c) => {
+          return <Card key={c.id} {...c} handleDragStart={handleDragStart} />;
+        })}
+        <DropIndicator beforeId={null} column={column} />
+        <AddCard column={column} setCards={setCards} />
+      </div>
+    </div>
+  );
+};
+
+const Card = ({ title, id, column, handleDragStart }) => {
+  return (
+    <>
+      <DropIndicator beforeId={id} column={column} />
+      <motion.div
+        layout
+        layoutId={id}
+        draggable="true"
+        onDragStart={(e) => handleDragStart(e, { title, id, column })}
+        className="cursor-grab rounded border border-neutral-700 bg-neutral-800 p-3 active:cursor-grabbing"
+      >
+        <p className="text-sm text-neutral-100">{title}</p>
+      </motion.div>
+    </>
+  );
+};
+
+const DropIndicator = ({ beforeId, column }) => {
+  return (
+    <div
+      data-before={beforeId || "-1"}
+      data-column={column}
+      className="my-0.5 h-0.5 w-full bg-violet-400 opacity-0"
+    />
+  );
+};
+
+const BurnBarrel = ({ setCards }) => {
+  const [active, setActive] = useState(false);
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setActive(true);
+  };
+
+  const handleDragLeave = () => {
+    setActive(false);
+  };
+
+  const handleDragEnd = (e) => {
+    const cardId = e.dataTransfer.getData("cardId");
+
+    setCards((pv) => pv.filter((c) => c.id !== cardId));
+
+    setActive(false);
+  };
+
+  return (
+    <div
+      onDrop={handleDragEnd}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      className={`mt-10 grid h-56 w-56 shrink-0 place-content-center rounded border text-3xl ${
+        active
+          ? "border-red-800 bg-red-800/20 text-red-500"
+          : "border-neutral-500 bg-neutral-500/20 text-neutral-500"
+      }`}
+    >
+      {active ? <FaFire className="animate-bounce" /> : <FiTrash />}
+    </div>
+  );
+};
+
+const AddCard = ({ column, setCards }) => {
+  const [text, setText] = useState("");
+  const [adding, setAdding] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!text.trim().length) return;
+
+    const newCard = {
+      column,
+      title: text.trim(),
+      id: Math.random().toString(),
+    };
+
+    setCards((pv) => [...pv, newCard]);
+
+    setAdding(false);
+  };
+
+  return (
+    <>
+      {adding ? (
+        <motion.form layout onSubmit={handleSubmit}>
+          <textarea
+            onChange={(e) => setText(e.target.value)}
+            autoFocus
+            placeholder="Add new task..."
+            className="w-full rounded border border-violet-400 bg-violet-400/20 p-3 text-sm text-neutral-50 placeholder-violet-300 focus:outline-0"
+          />
+          <div className="mt-1.5 flex items-center justify-end gap-1.5">
+            <button
+              onClick={() => setAdding(false)}
+              className="px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:text-neutral-50"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              className="flex items-center gap-1.5 rounded bg-neutral-50 px-3 py-1.5 text-xs text-neutral-950 transition-colors hover:bg-neutral-300"
+            >
+              <span>Add</span>
+              <FiPlus />
+            </button>
+          </div>
+        </motion.form>
+      ) : (
+        <motion.button
+          layout
+          onClick={() => setAdding(true)}
+          className="flex w-full items-center gap-1.5 px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:text-neutral-50"
+        >
+          <span>Add card</span>
+          <FiPlus />
+        </motion.button>
+      )}
+    </>
+  );
+};
+
+const DEFAULT_CARDS = [
+  { title: "Look into render bug in dashboard", id: "1", column: "backlog" },
+  { title: "SOX compliance checklist", id: "2", column: "backlog" },
+  { title: "[SPIKE] Migrate to Azure", id: "3", column: "backlog" },
+  { title: "Document Notifications service", id: "4", column: "backlog" },
+  { title: "Research DB options for new microservice", id: "5", column: "todo" },
+  { title: "Postmortem for outage", id: "6", column: "todo" },
+  { title: "Sync with product on Q3 roadmap", id: "7", column: "todo" },
+  { title: "Refactor context providers to use Zustand", id: "8", column: "doing" },
+  { title: "Add logging to daily CRON", id: "9", column: "doing" },
+  { title: "Set up DD dashboards for Lambda listener", id: "10", column: "done" },
+];
