@@ -178,9 +178,7 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
         onDrop={handleDragEnd}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
-        className={`h-full w-full transition-colors ${
-          active ? "bg-neutral-800/50" : "bg-neutral-800/0"
-        }`}
+        className={`h-full w-full transition-colors ${active ? "bg-neutral-800/50" : "bg-neutral-800/0"}`}
       >
         {filteredCards.map((c) => {
           return <Card key={c.id} {...c} handleDragStart={handleDragStart} />;
@@ -203,7 +201,7 @@ const Card = ({ title, id, column, handleDragStart }) => {
         onDragStart={(e) => handleDragStart(e, { title, id, column })}
         className="cursor-grab rounded border border-neutral-700 bg-neutral-800 p-3 active:cursor-grabbing"
       >
-        <p className="text-sm text-neutral-100">{title}</p>
+        <p className="text-sm text-neutral-100 break-words">{title}</p> {/* Added break-words */}
       </motion.div>
     </>
   );
@@ -283,7 +281,7 @@ const AddCard = ({ column, setCards }) => {
             onChange={(e) => setText(e.target.value)}
             autoFocus
             placeholder="Add new task..."
-            className="w-full rounded border border-violet-400 bg-violet-400/20 p-3 text-sm text-neutral-50 placeholder-violet-300 focus:outline-0"
+            className="w-full h-24 resize-y rounded border border-violet-400 bg-violet-400/20 p-3 text-sm text-neutral-50 placeholder-violet-300 focus:outline-0 overflow-auto"
           />
           <div className="mt-1.5 flex items-center justify-end gap-1.5">
             <button

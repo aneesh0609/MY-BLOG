@@ -16,7 +16,7 @@ export default function InfoTwo() {
           <article className="modal-container bg-white rounded-lg overflow-hidden shadow-lg max-h-[400px] max-w-[500px] w-full">
             <header className="modal-container-header p-4 flex items-center justify-between border-b border-yellow-300">
               <span className="modal-container-title flex items-center gap-2 text-2xl font-bold">
-               JavaScript
+               React
               </span>
               <button
                 className="icon-button p-0 border-0 bg-transparent w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-150 hover:bg-gray-200"

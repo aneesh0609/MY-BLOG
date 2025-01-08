@@ -596,7 +596,7 @@ export function LampDemo() {
   return (
     (<LampContainer>
       <motion.h1
-        initial={{ opacity: 0.5, y: 100 }}
+        initial={{ opacity: 0.5, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.3,
@@ -604,7 +604,7 @@ export function LampDemo() {
           ease: "easeInOut",
         }}
         className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-        Build lamps <br /> the right way
+Your trusted source for <br /> informative articles and educational resources 
       </motion.h1>
     </LampContainer>)
   );

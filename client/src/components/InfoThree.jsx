@@ -16,7 +16,7 @@ export default function InfoThree() {
           <article className="modal-container bg-white rounded-lg overflow-hidden shadow-lg max-h-[400px] max-w-[500px] w-full">
             <header className="modal-container-header p-4 flex items-center justify-between border-b border-yellow-300">
               <span className="modal-container-title flex items-center gap-2 text-2xl font-bold">
-               JavaScript
+               Node.js
               </span>
               <button
                 className="icon-button p-0 border-0 bg-transparent w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-150 hover:bg-gray-200"
@@ -49,22 +49,38 @@ export default function InfoThree() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700">Introduction to JavaScript</h3>
-              <p className="text-gray-600 mt-2">JavaScript is a versatile, dynamically typed programming language used for..</p>
+              <h3 className="text-xl font-semibold text-gray-700">Introduction to Node.js</h3>
+              <p className="text-gray-600 mt-2">Node.js is a powerful, open-source, cross-platform runtime environment used to..</p>
               <button
                 className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
                 onClick={() => toggleModal(`
-                 · JavaScript:  JavaScript is a versatile, dynamically typed programming language used for interactive web applications, supporting both client-side and server-side development, and integrating seamlessly with HTML, CSS, and a rich standard library..<br> 
-                 · Client-side:  Involves controlling the browser and its DOM, handling user events like clicks and form inputs. Libraries such as AngularJS, ReactJS, and VueJS are commonly used.<br>
-                 · Server-side:  Involves interacting with databases, manipulating files, and generating responses. With Node.js and frameworks like Express.js, JavaScript is also widely used on the server side..<br>
-                 · Integration:  Seamlessly integrates with HTML, CSS, and the standard library.<br>
-                 · Single-Threaded:  Executes one task at a time.<br>
-                 · Interpreted:  Executes code line by line.<br>
-                 · Dynamically Typed:  Variable types are determined at runtime.<br>
-                 · "Hello, World!" Program:  The simplest introductory program in JavaScript.<br>
-                 · The script tag is used to include JavaScript code inside an HTML document.<br>
-                 · Asynchronous:  JavaScript can handle tasks like fetching data from servers without freezing the user interface.<br>
-                 · Rich Ecosystem:  There are numerous libraries and frameworks built on JavaScript, such as React, Angular, and Vue.js, which make development faster and more efficient.<br><br><br>
+                 · Node.js is a powerful, open-source, cross-platform runtime environment used to execute JavaScript code outside of a web browser. It is built on the V8 JavaScript engine, the same engine that powers Google Chrome, which makes it very fast.<br>
+
+                  ·      Key Features of Node.js:<br>
+                      1  Asynchronous and Event-Driven: Node.js is designed to be non-blocking. This means that Node.js can handle multiple requests concurrently without waiting for a response from the previous request, which is great for building scalable applications.
+
+                      2  Single-Threaded: Despite being asynchronous, Node.js uses a single thread to handle requests. This approach makes it highly efficient for I/O-heavy operations, such as reading files from a disk, database interactions, and network requests.
+
+                      3  Built on V8 Engine: Node.js uses the V8 JavaScript engine (the same engine that runs JavaScript in Chrome), which is highly optimized for performance.
+
+                      4  NPM (Node Package Manager): Node.js comes with a built-in package manager (NPM), which allows developers to easily install, share, and manage dependencies. NPM is the largest software registry in the world and contains millions of libraries and tools.
+
+                      5  Cross-Platform: Node.js can run on various platforms like Windows, Linux, and macOS, making it a versatile choice for application development.
+
+                      6  Real-Time Data: Node.js excels at building real-time applications such as chat applications, live updates, and collaborative tools, thanks to its event-driven and non-blocking nature.
+
+                      7  Scalability: Node.js is highly scalable, which is why it is often used for building microservices and APIs...<br><br>
+
+                      Common Use Cases for Node.js:<br>
+                            Web Servers: Node.js can handle a large number of simultaneous connections in a non-blocking manner, making it ideal for web servers and APIs.
+
+                            Real-Time Applications: It is commonly used in applications that require real-time interaction, such as chat applications or collaborative tools.
+
+                            Microservices: Node.js's fast performance and event-driven nature make it suitable for building microservices-based architectures.
+
+                            API Development: Node.js can be used to build RESTful APIs that are fast, lightweight, and scalable.
+
+                            File System Operations: Node.js is excellent for applications that need to interact with the file system, such as file uploaders or content management systems.<br><br><br>
                 `)}
               >
                 See More
@@ -73,27 +89,115 @@ export default function InfoThree() {
 
              {/* Card 2 */}
              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700"> Syntax</h3>
-              <p className="text-gray-600 mt-2">JavaScript syntax refers to the rules and conventions dictating how code is...</p>
+              <h3 className="text-xl font-semibold text-gray-700"> Node.js Modules</h3>
+              <p className="text-gray-600 mt-2">modules are individual units of functionality that allow you to break up your...</p>
               <button
                 className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
                 onClick={() => toggleModal(`
-                 · JavaScript syntax refers to the rules and conventions dictating how code is structured and arranged within the JavaScript programming language. This includes statements, expressions, variables, functions, operators, and control flow constructs.<br>
-                 · syntax : console.log("Basic Print method in JavaScript"); .<br>
-                 · JavaScript syntax refers to the set of rules that determines how JavaScript programs are constructed:<br>
-                  // Variable declaration
-                    let c, d, e;
+                 · In Node.js, modules are individual units of functionality that allow you to break up your application into manageable pieces. They are a fundamental concept in Node.js, enabling you to use pre-built features or organize your code into separate files.
 
-                    // Assign value to the variable
-                    c = 5; 
+                  Node.js provides a core set of built-in modules, and you can also create your own modules or install external ones using NPM (Node Package Manager)..<br>
+                 · Types of Node.js Modules<br>
+                        There are three types of modules in Node.js:
 
-                    // Computer value of variables
-                    d = c;
-                    e = c / d;<br>
-                 · There are two types of values defined in JavaScript Syntax:
+                       1 Core Modules: These are built-in modules provided by Node.js and are available without the need for installation. Examples include http, fs, path, os, etc.
 
-                    Fixed Values: These are known as the literals.
-                    Variable values: These are called variables<br><br>
+                       2 Local Modules: These are modules that you create within your project. You can use the require() function to import and use them.
+
+                       3 External Modules: These are modules created by the Node.js community and can be installed using npm (Node Package Manager). For example, modules like express, lodash, and mongoose..<br><br>
+                  · 1. Core Modules : <br>
+                          Node.js provides several built-in modules that allow you to perform common tasks without having to install anything extra. These modules are always available in Node.js without any external dependencies.
+
+                        ·  Example of Using Core Modules :<br>
+                         
+                          // Using the 'http' module to create a simple HTTP server
+                          const http = require('http');
+
+                          // Create the server
+                          const server = http.createServer((req, res) => {
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'text/plain');
+                            res.end('Hello, Node.js!\n');
+                          });
+
+                          // Make the server listen on port 3000
+                          server.listen(3000, 'localhost', () => {
+                            console.log('Server is running at http://localhost:3000/');
+                          });<br>
+
+                        · Some common core modules:
+
+                         1 http: Used to create web servers and handle HTTP requests.
+                         2 fs (File System): Used to interact with the file system (read, write, delete files).
+                         3 path: Used for working with and manipulating file paths.
+                         4 os: Provides information about the operating system (e.g., CPU, memory, platform).
+                         5 events: Used to handle events and create event-driven applications.
+                         6 url: Used to work with URL parsing and manipulation.<br><br>
+                          
+                 · 2. Local Modules : <br>
+                          Local modules are JavaScript files you create yourself, which can export functions, objects, or variables for use in other parts of your application.
+
+                      ·    Example of a Local Module:
+                          math.js (local module):
+
+                          // Define a simple function to add two numbers
+                          function add(a, b) {
+                            return a + b;
+                          }
+
+                          module.exports = add;  // Export the function<br><br>
+                      ·    app.js (using the local module):
+
+                          // Import the 'math.js' module
+                          const add = require('./math.js');
+
+                          // Use the 'add' function from 'math.js'
+                          console.log(add(2, 3));  // Output: 5 <br>
+                      ·    In this example :
+                          math.js is the local module.
+                          We use module.exports to export the add function from math.js.
+                          In app.js, we use require('./math.js') to import the function.<br><br>
+
+                    3. External Modules (npm Modules) <br>
+                            Node.js has a massive ecosystem of open-source modules that you can install from npm (Node Package Manager). External modules are used to add new features and simplify development.
+
+                      ·      Installing External Modules:
+                            You can install modules using npm. For example, if you want to use the popular web framework Express:
+
+                      ·      Install Express:
+                            npm install express<br>
+                      ·      Use Express in Your Application:<br>
+                            // Import the Express module
+                            const express = require('express');
+
+                            // Create an Express application
+                            const app = express();
+
+                            // Define a simple route
+                            app.get('/', (req, res) => {
+                              res.send('Hello, Express!');
+                            });
+
+                            // Start the server
+                            app.listen(3000, () => {
+                              console.log('Server running on http://localhost:3000');
+                            });<br><br>
+                      ·      In this example:
+
+                            We installed the express module using npm install express.
+                            We then import it with require('express') and create a basic server that listens on port 3000.
+                            Other Popular External Modules:
+                            express: A minimal web framework for building web applications.
+                            mongoose: A MongoDB object modeling tool.
+                            lodash: A utility library that provides helpful functions for working with arrays, objects, and strings.
+                            axios: A promise-based HTTP client for making HTTP requests.
+                            dotenv: Loads environment variables from a .env file into process.env.<br><br>
+
+                      ·Module System in Node.js :<br>
+                            Node.js uses the CommonJS module system, which relies on require() to load modules and module.exports to export functionality.
+
+                            require(): Used to load and import modules (either core, local, or external).
+                            module.exports: Used to export functionality from a module, allowing it to be accessed from other files.<br><br>      
                 `)}
               >
                 See More
@@ -102,39 +206,53 @@ export default function InfoThree() {
 
              {/* Card 3 */}
              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700"> Variables</h3>
-              <p className="text-gray-600 mt-2"> In JavaScript, a variable is a container for storing...</p>
+              <h3 className="text-xl font-semibold text-gray-700"> NPM (Node Package Manager)</h3>
+              <p className="text-gray-600 mt-2"> NPM (Node Package Manager) is an essential part of the Node.js ecosystem. It is the default...</p>
               <button
                 className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
                 onClick={() => toggleModal(`
-                 · In JavaScript, a variable is a container for storing data values. It allows you to store a piece of information (such as a number, string, or object) and reference it by name in your program..<br> 
-                 · Declaring Variables in JavaScript :<br>
-                  Variables in JavaScript can be declared using three keywords:.<br>
-                  1 var: Older way of declaring variables (used before ES6).<br>
-                  2 let: A modern way to declare variables that allows reassignment but has block scope.<br>
-                  3 const: A modern way to declare variables that cannot be reassigned (constant values).<br>
-                 · Example of Declaring and Using Variables :<br>
-                                    // Using var (old method)
-                  var age = 25; // A variable to store a number
-                  console.log(age); // Output: 25
+                 · NPM (Node Package Manager) in Node.js :<br>
+                    NPM (Node Package Manager) is an essential part of the Node.js ecosystem. It is the default package manager for Node.js, allowing you to manage and share code libraries and dependencies easily. NPM is used to install external libraries and tools that are required to build applications, as well as manage dependencies within your project..<br> 
+                 · Key Features of NPM:<br>
+                     1· Package Management: NPM allows you to install, update, and manage dependencies (third-party libraries and tools) required by your application.
+                     2· Version Control: You can specify which versions of libraries your project needs to ensure compatibility.
+                     3· Dependency Management: NPM allows you to list dependencies in a package.json file, so others can easily install the required packages.
+                     4· Publish Your Own Packages: NPM provides a platform to share your own JavaScript libraries with others.<br><br>
 
-                  // Using let (modern method)
-                  let name = "Alice"; // A variable to store a string
-                  console.log(name); // Output: Alice
 
-                  // Using const (constant value)
-                  const birthYear = 1998; // A variable to store a constant value
-                  console.log(birthYear); // Output: 1998<br>
+                ·  Installing NPM: <br>
+                          When you install Node.js, NPM is automatically installed along with it. To check if you have NPM installed, you can run the following commands in the terminal:
 
-                 · Types of Values You Can Store in Variables..<br>
-                  Primitive types: Number, String, Boolean, Undefined, Null, Symbol, BigInt <br>
-                  Reference types: Object, Array, Function, etc.<br>
-                 · Naming Rules: <br>
+                        ·  To check the version of Node.js:<br>
+                          node -v
+                        ·  To check the version of NPM: <br>
+                          npm -v ..<br><br>
+                ·  The package.json File<br>
+                              The package.json file is the heart of your Node.js project. It contains metadata about the project, including project name, version, dependencies, scripts, and more.
 
-                 1· Must start with a letter (a-z, A-Z), underscore (_), or dollar sign ($).<br>
-                 2· Subsequent characters can include letters, numbers, underscores, or dollar signs.<br>
-                 3· JavaScript is case-sensitive.<br>
-                 4· Reserved keywords (e.g., if, let, for) cannot be used as variable names.<br><br>
+                            ·  Example of package.json:<br>
+                              {
+                                "name": "my-node-app",
+                                "version": "1.0.0",
+                                "description": "A simple Node.js application",
+                                "main": "index.js",
+                                "scripts": {
+                                  "start": "node index.js",
+                                  "test": "echo \"Error: no test specified\" && exit 1"
+                                },
+                                "author": "Your Name",
+                                "license": "ISC",
+                                "dependencies": {
+                                  "express": "^4.17.1"
+                                },
+                                "devDependencies": {
+                                  "nodemon": "^2.0.4"
+                                }
+                              }<br>
+                            ·  dependencies: Lists the packages your project needs to run (e.g., express, axios).
+                            ·  devDependencies: Lists the packages needed for development only (e.g., nodemon for auto-restarting the server).
+                            ·  scripts: Defines shortcuts for running commands, such as "start" for starting the application.
+                            ·  You typically create the package.json file by running npm init in your project directory, which will guide you through creating the file.<br><br><br>
                 `)}
               >
                 See More 
@@ -143,45 +261,37 @@ export default function InfoThree() {
 
              {/* Card 4 */}
              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700">Data Types</h3>
+              <h3 className="text-xl font-semibold text-gray-700">Events</h3>
               <p className="text-gray-600 mt-2">
-              JavaScript has several data types that can be divided into...</p>
+              events play a central role in building...</p>
               <button
                 className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
                 onClick={() => toggleModal(`
                   
-                 · JavaScript has several data types that can be divided into primitive types and reference types. Here's a summary of each:<br>
-                  Primitive Data Types.<br>
-                 · Number: Represents both integer and floating-point numbers.<br>
-                   let age = 25; // Integer
-                   let temperature = 36.5; // Floating-point<br>
+                 · Node.js Events<br>
+                      In Node.js, events play a central role in building non-blocking, asynchronous, and event-driven applications. The EventEmitter class in Node.js is at the core of the event-driven programming model. It allows objects to emit events and other objects to listen and respond to those events.
 
-                 · String: Represents a sequence of characters (text).<br>
-                   let name = "Alice"; // A string
-                   let greeting = 'Hello, world!'; // A string<br>
-                 · Boolean: Represents either true or false.<br>
-                   let isActive = true; // A boolean value
-                   let hasPermission = false; // A boolean value<br> 
-                 · Undefined: A variable that has been declared but not assigned a value. By default, a variable is assigned undefined if not initialized.<br>
-                  let notAssigned;
-                  console.log(notAssigned); // Output: undefined<br>
-                 · Null: Represents the intentional absence of any object value (i.e., "no value").<br>
-                  let emptyValue = null; // Represents no value or object<br><br>
-                  2. Reference Data Types<br>
-                 · These are more complex data types and are mutable (can be changed). They store references to the values rather than the actual value itself.<br>
-                 · Object: Represents a collection of key-value pairs (also called properties).<br>
-                   let person = {
-                      name: "John",
-                      age: 30
-                    };<br>
-                 · Array: A special type of object used to store ordered collections of values.<br>
-                  let numbers = [1, 2, 3, 4];
-                  let fruits = ["apple", "banana", "cherry"];<br>
-                 · Function: A block of reusable code that can be invoked to perform a task or calculation.<br>
-                  function greet(name) {
-                    return "Hello, " + name;
-                  }<br><br>
+                      The EventEmitter class is provided by the events module in Node.js, and it allows the creation of custom events that can be emitted and handled by different parts of your application.<br>
+                  
+                 · The EventEmitter Class<br>
+                          The EventEmitter class allows you to create custom events and attach listeners to these events. It provides methods for:
 
+                        ·  Emitting events
+                        ·  Adding event listeners
+                        ·  Removing event listeners
+                        ·  Handling errors
+                         · The EventEmitter is used to build event-driven systems, such as web servers or applications that need to react to specific events.<br><br>
+
+                 · Event Listeners<br>
+                      ·  on(event, listener): Adds a listener to an event. The listener is called whenever the event is emitted.
+                       · once(event, listener): Adds a one-time listener that is executed only once for the event and then removed.
+                      ·  removeListener(event, listener): Removes a specific listener for a given event.
+                      ·  removeAllListeners([event]): Removes all listeners for a particular event, or all events if no specific event is passed.<br><br>
+                 
+                 · Best Practices for Using Events in Node.js:<br>
+                        ·  Always handle errors: If you're emitting errors, always listen for the error event to avoid crashing the application.
+                        ·  Avoid memory leaks: If you're adding listeners to events, be sure to remove them when they're no longer needed to avoid memory leaks.
+                        ·  Use events for decoupling: Use the event-driven architecture to decouple parts of your application, where one part emits events and another part listens and responds to those events<br><br><br>
                 `)}
               >
                 See More
@@ -190,409 +300,55 @@ export default function InfoThree() {
 
              {/* Card 5 */}
              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700">Operators</h3>
-              <p className="text-gray-600 mt-2">JavaScript operators are symbols or keywords used to perform...</p>
+              <h3 className="text-xl font-semibold text-gray-700">File System Module</h3>
+              <p className="text-gray-600 mt-2">The File System (FS) module in Node.js provides a set of APIs to interact with the...</p>
               <button
                 className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
                 onClick={() => toggleModal(`
-                ·  JavaScript operators are symbols or keywords used to perform operations on values and variables. They are the building blocks of JavaScript expressions and can manipulate data in various ways.<br> 
-                ·  There are various operators supported by JavaScript.<br>
-                ·  Arithmetic Operators perform mathematical calculations like addition, subtraction, multiplication, etc.<br>
-                  const sum = 5 + 3; // Addition
-                  const diff = 10 - 2; // Subtraction
-                  const p = 4 * 2; // Multiplication
-                  const q = 8 / 2; // Division
-                  console.log(sum, diff, p, q);<br>
-                  output: 8 8 8 4 ;<br><br>
-                ·  Assignment operators are used to assign values to variables. They can also perform operations like addition or multiplication before assigning the value.<br>
-                  let n = 10;
-                  n += 5;
-                  n *= 2;
-                  console.log(n);<br>
-                  output: 30 ..<br>
-            
-                ·  Comparison operators compare two values and return a boolean (true or false). They are useful for making decisions in conditional statements.<br>
-                  console.log(10 > 5);
-                  console.log(10 === "10");<br> 
-                  output : true
-                           false <br>
-                  > checks if the left value is greater than the right.
-                  === checks for strict equality (both type and value).
-                  Other operators include <, <=, >=, and !==.<br><br>
-                ·  Comparison operators are mainly used to perform the logical operations that determine the equality or difference between the values.<br>
-                  const a = true, b = false;
-                  console.log(a && b); // Logical AND
-                  console.log(a || b); // Logical OR<br>
-                  output : false
-                           true<br>
-                  && returns true if both operands are true.
-                  || returns true if at least one operand is true.
-                  ! negates the boolean value. <br><br>        
-                · Bitwise operators perform operations on binary representations of numbers.<br>
-                 const res = 5 & 1; // Bitwise AND
-                 console.log(res);<br>
-                output: 1<br>
-                · & performs a bitwise AND.
-                · | performs a bitwise OR.
-                · ^ performs a bitwise XOR.
-                · ~ performs a bitwise NOT.<br><br>
-              ·  The ternary operator is a shorthand for conditional statements. It takes three operands.<br>
-                const age = 18;
-                const status = age >= 18 ? "Adult" : "Minor";
-                console.log(status);<br>
-                output: Adult<br>
-              ·  condition ? expression1 : expression2 evaluates expression1 if the condition is true, otherwise evaluates expression2.<br><br>
-              · Comma Operator (,) mainly evaluates its operands from left to right sequentially and returns the value of the rightmost operand. <br>
-                let n1, n2
-                const res = (n1 = 1, n2 = 2, n1 + n2);
-                console.log(res);<br>
-                output: 3<br>
-                Each expression is evaluated from left to right.
-                The final result of the expression is the rightmost value.<br><br>
-              ·  Unary operators operate on a single operand (e.g., increment, decrement).<br>
-                let x = 5;
-                console.log(++x); // Pre-increment
-                console.log(x--); // Post-decrement (Output: 6, then x becomes 5)<br>
-                output: 6 6<br>
-                ++ increments the value by 1.
-                — decrements the value by 1.
-                typeof returns the type of a variable.<br><br>
-              ·  JavaScript Relational operators are used to compare its operands and determine the relationship between them. They return a Boolean value (true or false) based on the comparison result.<br>
-                const obj = { length: 10 };
-                console.log("length" in obj);
-                console.log([] instanceof Array);<br>
-                output : true
-                         true<br>
-                in checks if a property exists in an object.
-                instanceof checks if an object is an instance of a constructor. <br><br>
-               · JavaScript String Operators include concatenation (+) and concatenation assignment (+=), used to join strings or combine strings with other data types.<br>
-                const s = "Hello" + " " + "World";
-                console.log(s); <br>
-                output: "Hello World"<br>
-                + concatenates strings.
-                += appends to an existing string.<br><br>
-                `)}
-              >
-                See More
-              </button>
-            </div>
-
-             {/* Card 6 */}
-             <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700">JavaScript Statements</h3>
-              <p className="text-gray-600 mt-2">statement executes a block of code based on a condition.If the condition..</p>
-              <button
-                className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
-                onClick={() => toggleModal(`
-              ·    JavaScript if-else :<br> 
-                  JavaScript if-else statement executes a block of code based on a condition. If the condition evaluates to true, the code inside the “if” block executes; otherwise, the code inside the “else” block, if present, executes.
-                  Such control statements are used to cause the flow of execution to advance and branch based on changes to the state of a program.<br>
-                  // JavaScript program to illustrate If statement
-                    let i = 10;
-
-                    if (i > 15) console.log("10 is less than 15");
-
-                    // This statement will be executed
-                    // as if considers one statement by default
-                    console.log("I am Not in if");<br>
-                    output: I am Not in if<br><br>
-              ·    JavaScript if-statement
-                  It is a conditional statement used to decide whether a certain statement or block of statements will be executed or not i.e. if a certain condition is true then a block of statements is executed otherwise not.<br><br>
-              ·    JavaScript nested-if statement
-                  JavaScript allows us to nest if statements within if statements. i.e, we can place an if statement inside another if statement. A nested if is an if statement that is the target of another if or else. <br>
-                  if (condition1) 
-                  {
-                    // Executes when condition1 is true
-                    if (condition2) 
-                    {
-                        // Executes when condition2 is true
-                    }
-                  }<br><br>
-              ·     JavaScript if-else-if ladder statement
-                    Here, a user can decide among multiple options. The if statements are executed from the top down. As soon as one of the conditions controlling the if is true, the statement associated with that if is executed, and the rest of the ladder is bypassed. If none of the conditions is true, then the final else statement will be executed.<br> 
-                       if (condition)
-                            statement;
-                        else if (condition)
-                            statement;
-                        .
-                        .
-                        else
-                            statement;.<br><br>
-              ·    JavaScript switch Statement<br><br>
-                  The JavaScript switch statement evaluates an expression and executes a block of code based on matching cases. It provides an alternative to long if-else chains, improving readability and maintainability, especially when handling multiple conditional branches.<br>
-                  switch (expression) {
-                        case value1:
-                            // code block 1;
-                            break;
-                        case value2:
-                            // code block 2;
-                            break;
-                      ...
-                        default:
-                          // default code block;
-                    }<br><br>
-              ·   How Switch Statement Works
-                     1 Evaluation: The expression inside the switch the statement is evaluated once.
-                     2 Comparison: The value of the expression is compared with each case label (using strict equality ===).
-                     3 Execution: If a match is found, the corresponding code block following the matching case the label is executed. If no match is found, the execution jumps to the default case (if present) or continues with the next statement after the switch block.
-                     4 Break Statement: After executing a code block, the break statement terminates the switch statement, preventing execution from falling through to subsequent cases. If break is omitted, execution will continue to the next case (known as “fall-through”).
-                     5 Default Case: The default case is optional. If no match is found, the code block under default is executed<br><br>
-              ·       JavaScript Break Statement<br>
-                     JavaScript break statement is used to terminate the execution of the loop or the switch statement when the condition is true.<br>
-                     for (let i = 1; i < 6; i++) {
-                          if (i == 4) break;
-                          console.log(i);
-                      }<br><br>
-              ·        JavaScript Continue Statement<br>
-                      The continue statement in JavaScript is used to break the iteration of the loop and follow with the next iteration.<br>
-                      for (let i = 0; i < 10; i++) {
-                          if (i % 2 == 0) continue;
-                          console.log(i);
-                      }<br><br>
-                ·      JavaScript return Statement<br>
-                      The JavaScript return statement is used to stop the function’s execution and optionally return a value to the caller. If there is no return statement in a function, then it returns undefined.<br>
-                      // Return the product of a and b
-                        function Product(a, b) {    
-                            return a * b;
-                        };
-
-                        console.log(Product(6, 10));<br><br>
-                  
-                `)}
-              >
-                See More 
-              </button>
-            </div>
-
-             {/* Card 7 */}
-             <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700">JavaScript Loops</h3>
-              <p className="text-gray-600 mt-2">Loops in JavaScript are used to reduce repetitive tasks by repeatedly executing...</p>
-              <button
-                className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
-                onClick={() => toggleModal(`
-                  Loops in JavaScript are used to reduce repetitive tasks by repeatedly executing a block of code as long as a specified condition is true. This makes code more concise and efficient.<br> 
-                  JavaScript for Loop<br>
-                  The for loop repeats a block of code a specific number of times. It contains initialization, condition, and increment/decrement in one line.<br>
-                  for (initialization; condition; increment/decrement) {
-                          // Code to execute
-                      }<br>
-                  In this example
-
-                  Initializes the counter variable (let i = 1).
-                  Tests the condition (i <= 3); runs while true.
-                  Executes the loop body and increments the counter (i++).<br><br>
-                  JavaScript while Loop<br>
-                  The while loop executes as long as the condition is true. It can be thought of as a repeating if statement. <br>
-                   let i = 0;
-                    while (i < 3) {
-                        console.log("Number:", i);
-                        i++;
-                    }.<br>
-                   output : Number: 0
-                            Number: 1
-                            Number: 2<br><br>
-                  3. JavaScript do-while Loop<br>
-                  The do-while loop is similar to while loop except it executes the code block at least once before checking the condition.<br>
-                  let i = 0;
-                    do {
-                        console.log("Iteration:", i);
-                        i++;
-                    } while (i < 3);<br>
-                  Output
-                        Iteration: 0
-                        Iteration: 1
-                        Iteration: 2.<br><br>
-                  4. JavaScript for-in Loop<br>
-                  The for…in loop is used to iterate over the properties of an object. It only iterate over keys of an object which have their enumerable property set to “true”.<br>
-                  const obj = { name: "Ashish", age: 25 };
-                    for (let key in obj) {
-                        console.log(key, ":", obj[key]);
-                    }<br>
-                    Output: name : Ashish
-                            age : 25 <br><br>
-                  5. JavaScript for-of Loop<br>
-                  The for…of loop is used to iterate over iterable objects like arrays, strings, or sets. It directly iterate the value and has more concise syntax than for loop.<br>
-                  let a = [1, 2, 3, 4, 5];
-                      for (let val of a) {
-                          console.log(val);
-                      } <br>
-                       output : 1 2 3 4 5 <br><br>         
-                `)}
-              >
-                See More 
-              </button>
-            </div>
-
-             {/* Card 8 */}
-             <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700">Objects in Javascript</h3>
-              <p className="text-gray-600 mt-2">An object in JavaScript is a data structure used to store..</p>
-              <button
-                className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
-                onClick={() => toggleModal(`
-                 An object in JavaScript is a data structure used to store related data collections. It stores data as key-value pairs, where each key is a unique identifier for the associated value. Objects are dynamic, which means the properties can be added, modified, or deleted at runtime.<br> 
-                 There are two primary ways to create an object in JavaScript: Object Literal and Object Constructor.
-
-                 1. Creation sing Object Literal<br>
-                  The object literal syntax allows you to define and initialize an object with curly braces {}, setting properties as key-value pairs.<br>
-                  let obj = {
-                        name: "Sourav",
-                        age: 23,
-                        job: "Developer"
-                    };
-                    console.log(obj);<br>
-                  output : { name: 'Sourav', age: 23, job: 'Developer' }<br><br>
-                  2. Creation Using new Object() Constructor<br>
-                  let obj = new Object();
-                        obj.name= "Sourav",
-                        obj.age= 23,
-                        obj.job= "Developer"
-
-                        console.log(obj);<br>
-                   output : { name: 'Sourav', age: 23, job: 'Developer' }.<br><br> 
-                  1. Accessing Object Properties
-                                You can access an object’s properties using either dot notation or bracket notation<br>
-                                1
-                                let obj = { name: "Sourav", age: 23 };
-
-                                // Using Dot Notation
-                                4
-                                console.log(obj.name);
-
-                                // Using Bracket Notation
-                                7
-                                console.log(obj["age"]);<br>
-                                output: Sourav
-                                        23<br><br>
-                  2. Modifying Object Properties<br>
-                  Properties in an object can be modified by reassigning their values.<br>
-                      1
-                      let obj = { name: "Sourav", age: 22 };
-                      2
-                      console.log(obj);
-              
-                      obj.age = 23;
-                      5
-                      console.log(obj);
-                      Output : 
-                      { name: 'Sourav', age: 22 }
-                      { name: 'Sourav', age: 23 }<br><br>
-                  3. Adding Properties to an Object<br>
-                  You can dynamically add new properties to an object using dot or bracket notation.<br>
-                      1
-                      let obj = { model: "Tesla" };
-                      2
-                      obj.color = "Red";
-                      3
-                      console.log(obj);
-                      Output :  { model: 'Tesla', color: 'Red' }<br><br>
-                `)}
-              >
-               See More 
-              </button>
-            </div>
-
-             {/* Card 9 */}
-             <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-              <h3 className="text-xl font-semibold text-gray-700">Functions in JavaScript</h3>
-              <p className="text-gray-600 mt-2"> Functions in JavaScript are reusable blocks of code designed to perform...</p>
-              <button
-                className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
-                onClick={() => toggleModal(`
-                  Functions in JavaScript are reusable blocks of code designed to perform specific tasks. They allow you to organize, reuse, and modularize code. It can take inputs, perform actions, and return outputs.<br> 
-                    function sum(x, y) { 
-                        return x + y; 
-                    }
-                    console.log(sum(6, 9));<br>
-                    Output: 15<br><br>
-                  Function Syntax and Working :
-                    A function definition is sometimes also termed a function declaration or function statement. Below are the rules for creating a function in JavaScript:
-
-                    Begin with the keyword function followed by,
-                    A user-defined function name (In the above example, the name is sum)
-                    A list of parameters enclosed within parentheses and separated by commas (In the above example, parameters are x and y)
-                    A list of statements composing the body of the function enclosed within curly braces {} (In the above example, the statement is “return x + y”).<br><br>
-                  Return Statement :
-                    In some situations, we want to return some values from a function after performing some operations. In such cases, we make use of the return. This is an optional statement. In the above function, “sum()” returns the sum of two as a result. <br><br>
-                  Function Parameters : 
-                    Parameters are input passed to a function. In the above example, sum() takes two parameters, x and y.<br><br>
-                  Calling Functions :
-                    After defining a function, the next step is to call them to make use of the function. We can call a function by using the function name separated by the value of parameters enclosed between the parenthesis.<br><br>
-                  Arrow Functions :
-                      Arrow functions are a concise syntax for writing functions, introduced in ES6, and they do not bind their own this context.<br>
-                      Syntax:
-
-                      let function_name = (argument1, argument2 ,..) => expression<br>
-                      1
-                      const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
-                      2
-                      const a2 = a.map(function (s) {
-                      3
-                          return s.length;
-                      });
-
-                      console.log("Normal way ", a2);
-                      const a3 = a.map((s) => s.length);
-      
-                      console.log("Using Arrow Function ", a3);<br>
-                      Output :
-                      Normal way  [ 8, 6, 7, 9 ]
-                      Using Arrow Function  [ 8, 6, 7, 9 ]<br><br>
-                   Callback Functions :<br>
-                        A callback function is passed as an argument to another function and is executed after the completion of that function.
-                        1
-                        function num(n, callback) {
-                        2
-                            return callback(n);
-                        3
-                        }
-                        const double = (n) => n * 2;
-                        console.log(num(5, double));
-
-                        Output
-                        10<br><br> 
-                  Anonymous Functions :
-                          Anonymous functions are functions without a name. They are often used as arguments to other functions.
-
-                          setTimeout(function () {
-                          2
-                              console.log("Anonymous function executed!");
-                          3
-                          }, 1000);<br><br>
-                  Nested Functions :
-                        Functions defined within other functions are called nested functions. They have access to the variables of their parent function.
-
-                        function outerFun(a) {
-                        2
-                            function innerFun(b) {
-                        3
-                                return a + b;
-                        4
-                            }
-                        5
-                            return innerFun;
-                        6
-                        }
-                        const addTen = outerFun(10);
-                        9
-                        console.log(addTen(5));
-
-                        Output
-                        15<br><br>
-                  Pure Functions :
-                            Pure functions return the same output for the same inputs and do not produce side effects. They do not modify state outside their scope, such as modifying global variables, changing the state of objects passed as arguments, or performing I/O operations.
-
-                            1
-                            function pureAdd(a, b) {
-                            2
-                                return a + b;
-                            3
-                            }
-                            console.log(pureAdd(2, 3));
-
-                            Output
-                            5<br><br>
+                  1. Introduction to the FS Module <br>
+                        ·    The File System (FS) module in Node.js provides a set of APIs to interact with the file system. This includes reading, writing, updating, and deleting files, as well as creating and managing directories.
+                        ·    The FS module is part of Node.js's core API, which means you don't need to install it separately. It is included by default when you install Node.js, and it plays a crucial role in server-side applications where file manipulation is needed.<br><br>
+                  2. Synchronous vs. Asynchronous Operations <br>
+                          ·  Synchronous operations in the FS module block further execution of code until the current operation is finished. This means the program will wait for the file system operation to complete before moving to the next task.
+                          ·  Asynchronous operations, on the other hand, allow the event loop to continue executing other tasks while the file system operation is still running. This makes them more efficient, especially when dealing with multiple I/O-bound tasks.
+                          ·  While synchronous methods are simpler to use, asynchronous methods are preferred in most real-world applications to ensure that they don't block the server, particularly when handling a large number of requests. <br> <br>
+                  3. Reading Files <br>
+                          ·  The FS module allows reading files in both synchronous and asynchronous manners. Reading a file means fetching its contents into your application.
+                          ·  Asynchronous file reading ensures that your application remains responsive, as the reading operation doesn't block the rest of your code from executing. Once the file is successfully read, the contents are passed to a callback function.
+                           · Synchronous file reading blocks the execution of code until the file is read, which can be useful for scripts that run in sequence, but is less efficient in a server environment where multiple requests need to be handled simultaneously. <br> <br>
+                  4. Writing Files <br>
+                          ·  The FS module allows you to write data to files in various ways. You can either overwrite an existing file or append data to the end of the file.
+                          ·  Writing files can be done asynchronously, allowing the server to remain responsive while the operation takes place in the background, or synchronously, which would block the event loop until the write is complete.
+                           · It’s common to use the FS module for storing logs, configuration files, or temporary data generated by the application. When overwriting a file, it’s important to consider whether the file’s existing content should be replaced or if it should be preserved. <br> <br>
+                   5. Appending Data to Files <br>
+                          ·  In addition to writing or replacing the content of a file, the FS module provides functionality to append data to a file. This operation is essential when working with log files or continuously growing data, as you don't want to overwrite existing information.
+                          ·  Similar to reading and writing, appending can be performed asynchronously, which helps avoid blocking other operations while appending data. <br> <br>
+                 6. Deleting Files <br>
+                          ·  The FS module offers a way to delete files from the file system, either asynchronously or synchronously. This operation is essential when cleaning up temporary files, logs, or other data that is no longer needed.
+                          ·  When deleting files, it’s important to handle potential errors, such as attempting to delete a non-existent file or lacking the necessary permissions. <br> <br>
+                 7. Checking if a File or Directory Exists <br>
+                          ·  The FS module can be used to check if a file or directory exists before performing operations on it. This is useful to avoid errors that could occur when trying to read, write, or delete a file that doesn’t exist.
+                          ·  Instead of directly reading or writing a file, it’s often a good practice to check its existence first. This ensures that your program doesn’t throw an error and provides an opportunity to handle such situations more gracefully. <br> <br>
+                 8. Managing Directories <br>
+                          ·  The FS module can also handle directories, enabling you to create, read, and delete directories as part of your file management system.
+                           · Directory creation can be done recursively, meaning if a parent directory doesn’t exist, it will be created automatically along with the subdirectories. This is useful for creating nested folder structures dynamically.
+                          ·  You can also list the contents of a directory, which allows you to see which files and folders are contained within it. This is helpful for organizing or searching through large sets of files. <br> <br>
+                 9. Error Handling <br>
+                          ·  Error handling is an essential part of working with the FS module, as many operations depend on external factors like file existence, file permissions, and system resources.
+                          ·  When performing file operations, always check for errors. For example, reading from a file that doesn't exist or writing to a file without appropriate permissions can lead to runtime errors.
+                           · Asynchronous methods typically handle errors through callbacks, while synchronous methods throw errors that can be caught using try-catch blocks. Ensuring that errors are handled properly can prevent crashes and ensure smooth operation. <br> <br>
+                  10. File System Constants <br>
+                          ·  The FS module comes with several constants that provide information about file status and permissions. These constants can be used to check whether a file is readable, writable, or executable.
+                          ·  For example, fs.constants.F_OK checks if a file exists, fs.constants.R_OK checks if the file is readable, and fs.constants.W_OK checks if the file is writable. These constants are especially useful when using methods like fs.access() to check file properties. <br> <br>
+                  11. File Permissions <br>
+                          ·  File permissions are an important aspect of the FS module, as they define who can read, write, or execute a file. These permissions can be set when creating a file or changing the properties of an existing file.
+                          ·  The FS module allows you to manage file permissions using methods like fs.chmod() and fs.chown(), which modify the access rights and ownership of a file or directory. Proper file permissions ensure that files are securely managed, and only authorized users can access or modify them. <br> <br>
+                    12. Practical Use Cases of the FS Module <br>
+                          ·  The FS module is widely used for various purposes in real-world applications. For instance, it can be used to serve static files in a web server, generate configuration files, write logs, or handle user-uploaded content.
+                           · It is also used in tasks like batch file processing, such as reading multiple files from a directory and performing some operation on each one, or automating the creation and maintenance of directories and files for different parts of the system. <br> <br>
+                     13. Performance Considerations <br>
+                          ·  While the FS module is powerful, it’s important to consider performance when working with large files or high-frequency operations. Asynchronous operations are generally more performant and help avoid blocking the application’s event loop, which could slow down or crash the server.
+                          ·  For large files, consider using streams (which are also available in the FS module) to read or write data in chunks, rather than loading the entire file into memory at once.<br><br><br>
                 `)}
               >
                 See More
