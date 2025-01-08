@@ -26,12 +26,6 @@ export const HoverImageLinks = () => {
           imgSrc="https://imgcdn.stablediffusionweb.com/2024/9/9/2f58cc46-1499-4708-96bf-4de4ffab6de5.jpg"
         />
         <Link
-          href='/dsa'
-          heading="DSA"
-          subheading="We want cool people"
-          imgSrc="https://www.shutterstock.com/image-vector/dsa-letter-logo-design-illustration-600nw-2309157673.jpg"
-        />
-        <Link
           href='/mongodb'
           heading="MongoDB"
           subheading="Incase you're bored"

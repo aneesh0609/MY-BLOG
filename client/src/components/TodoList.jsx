@@ -32,7 +32,7 @@ const Board = () => {
       <Column
         title="Backlog"
         column="backlog"
-        headingColor="text-white"
+        headingColor="text-red-400"
         cards={cards}
         setCards={setCards}
       />
