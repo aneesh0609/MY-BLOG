@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import CallToAction from '../components/CallToAction';
 import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
-import {  LampDemo, ThreeDCardDemo } from '../components/Lamp';
+import { ThreeDCardDemo } from '../components/Lamp';
 import SplitText from "../components/Stack";
 import BarPoll from '../components/Barpoll';
 import { RevealBento1 } from '../components/Mail';
