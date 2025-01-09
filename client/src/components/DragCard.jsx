@@ -21,7 +21,7 @@ const Cards = () => {
     >
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1635373670332-43ea883bb081?q=80&w=2781&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://ih1.redbubble.net/image.1874928243.1165/flat,750x,075,f-pad,750x1000,f8f8f8.u1.jpg"
         alt="Example image"
         rotate="6deg"
         transform="translate(-50%, -50%)"
@@ -29,7 +29,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1576174464184-fb78fe882bfd?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://i.pinimg.com/736x/7f/5b/9d/7f5b9d9df9114b8de6864ebbdc2e1aa4.jpg"
         alt="Example image"
         rotate="12deg"
         transform="translate(-50%, -50%)"
@@ -37,7 +37,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1503751071777-d2918b21bbd9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://img.freepik.com/premium-photo/anthropomorphic-wild-animals-character-using-virtual-reality-headset_1000823-192992.jpg?semt=ais_hybrid"
         alt="Example image"
         rotate="-6deg"
         transform="translate(-50%, -50%)"
@@ -45,7 +45,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1620428268482-cf1851a36764?q=80&w=2609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://t4.ftcdn.net/jpg/05/61/94/83/360_F_561948394_eSfXqIaDT8FeAcb4A9Ab79m5UNy8cL5p.jpg"
         alt="Example image"
         rotate="8deg"
         transform="translate(-50%, -50%)"
@@ -53,7 +53,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1602212096437-d0af1ce0553e?q=80&w=2671&auto=format&fit=crop&ixib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171841_ek6D8jhk0oh3rwQgSkBdDHcatLaJZ4iQ.jpg"
         alt="Example image"
         rotate="18deg"
         transform="translate(-50%, -50%)"
@@ -61,7 +61,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1622313762347-3c09fe5f2719?q=80&w=2640&auto=format&fit=crop&ixib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://i.pinimg.com/736x/ab/dd/cd/abddcdd2dd91d4cd0ccb5f2bd01f4c8d.jpg"
         alt="Example image"
         rotate="-3deg"
         transform="translate(-50%, -50%)"

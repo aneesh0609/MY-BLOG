@@ -49,8 +49,8 @@ const handleSubmit = async (e) => {
         {/* left side */}
         <div className='flex-1'>
         <Link to="/" className="flex items-center space-x-2 ">
-          <span className="  ml-5 mr-5 font-bold dark:text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white px-2 py-1 text-4xl">
-            Moltres's BLOG
+          <span className="  ml-5 mr-5 font-bold dark:text-white bg-gradient-to-r from-indigo-500 via-purple-300 to-red-500 rounded-lg text-white px-2 py-1 text-4xl">
+            CodeMew
           </span>
         </Link>
         

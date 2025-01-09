@@ -45,7 +45,9 @@ export default function DashSidebar() {
               <Sidebar.Item
                 active={tab === 'dash' || !tab}
                 icon={HiChartPie}
+                className=' bg-gray-200 dark:text-white dark:bg-gray-900'
                 as='div'
+
               >
                 Dashboard
               </Sidebar.Item>
@@ -77,7 +79,9 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={tab === 'users'}
                   icon={HiOutlineUserGroup}
+                  className=' bg-gray-200 dark:text-white dark:bg-gray-900'
                   as='div'
+                 
                 >
                   Users
                 </Sidebar.Item>
@@ -87,6 +91,7 @@ export default function DashSidebar() {
                 <Sidebar.Item
                   active={tab === 'comments'}
                   icon={HiAnnotation}
+                  className=' bg-gray-200 dark:text-white dark:bg-gray-900'
                   as='div'
                 >
                   Comments

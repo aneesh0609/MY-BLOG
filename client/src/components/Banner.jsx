@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import {  FiMail, FiMapPin } from "react-icons/fi";
+
 
 export const RevealBento = () => {
   return (

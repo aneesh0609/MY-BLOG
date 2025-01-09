@@ -239,7 +239,7 @@ export default function DashProfile() {
         />
         <Button
           type='submit'
-          gradientDuoTone='purpleToBlue'
+          
           outline
           disabled={loading || imageFileUploading}
         >

@@ -7,6 +7,7 @@ import SplitText from "../components/Stack";
 import BarPoll from '../components/Barpoll';
 import { RevealBento1 } from '../components/Mail';
 
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
