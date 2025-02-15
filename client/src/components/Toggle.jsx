@@ -10,25 +10,25 @@ export const HoverImageLinks = () => {
         <Link
           href='/javascript'
           heading="JavaScript"
-          subheading="Learn what we do here"
+        
           imgSrc="https://ih1.redbubble.net/image.2221346343.9025/raf,360x360,075,t,fafafa:ca443f4786.jpg"
         />
         <Link
           href='/react'
           heading="React"
-          subheading="We work with great people"
+        
           imgSrc="https://pics.craiyon.com/2023-11-27/VtbOOPNuRuKEOqEKURG5ZA.webp"
         />
         <Link
           href='/node'
           heading="Node.js"
-          subheading="Our work speaks for itself"
+          
           imgSrc="https://imgcdn.stablediffusionweb.com/2024/9/9/2f58cc46-1499-4708-96bf-4de4ffab6de5.jpg"
         />
         <Link
           href='/mongodb'
           heading="MongoDB"
-          subheading="Incase you're bored"
+         
           imgSrc="https://miro.medium.com/v2/resize:fit:1200/1*gf_XcvKMkfwiQLxTVqGiaA.png"
         />
       </div>

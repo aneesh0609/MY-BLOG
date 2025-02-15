@@ -65,7 +65,7 @@ const handleSubmit = async (e) => {
             
 
             <div>
-              <Label value='your email' />
+              <Label value='Enter Email' />
               <TextInput
               type='text'
               placeholder='email'
@@ -75,7 +75,7 @@ const handleSubmit = async (e) => {
             </div>
 
             <div>
-              <Label value='your password' />
+              <Label value='Enter Password' />
               <TextInput
               type='text'
               placeholder='**************'

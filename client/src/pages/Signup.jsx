@@ -62,7 +62,7 @@ const handleSubmit = async (e) => {
         <div className='flex-1'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div>
-              <Label value='your username' />
+              <Label value='Your Username' />
               <TextInput
               type='text'
               placeholder='username'
@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
             </div>
 
             <div>
-              <Label value='your email' />
+              <Label value='Your Email' />
               <TextInput
               type='text'
               placeholder='email'
@@ -84,7 +84,7 @@ const handleSubmit = async (e) => {
             </div>
 
             <div>
-              <Label value='your password' />
+              <Label value='Your Password' />
               <TextInput
               type='text'
               placeholder='password'
