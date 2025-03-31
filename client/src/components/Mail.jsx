@@ -181,8 +181,8 @@ const ContactForm = () => {
   };
 
   return (
-    <Block className="col-span-12 md:col-span-9">
-      <p className="mb-3 text-lg">Send me a message</p>
+    <Block className="col-span-12 md:col-span-9 ">
+      <p className="mb-3 text-lg text-center">Send me a message</p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input
           type="text"
@@ -205,13 +205,14 @@ const ContactForm = () => {
           className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-1.5 text-white placeholder-zinc-500 transition-colors focus:border-red-300 focus:outline-0"
           rows={6}
         />
-        <button
+       <button
           type="submit"
-          className="flex items-center gap-2 whitespace-nowrap rounded bg-zinc-50 px-3 py-2 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-300"
+          className="w-full whitespace-nowrap rounded bg-zinc-50 px-3 py-2 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-300 text-center"
           disabled={loading}
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
+
       </form>
     </Block>
   );
